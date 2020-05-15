@@ -1,0 +1,99 @@
+a {
+    color: #e1e1e1;
+}
+
+.nav-link{}
+
+/* Header */
+.header-div{
+    background-image: url('../../assets/img/audi-service.jpg');
+  
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header-h1{
+    font-family: 'Raleway', sans-serif;
+    color: #ffe600;
+    padding-top: 4em;
+    font-size: 60px;
+}
+
+.header-paragraf{
+    font-family: 'Raleway', sans-serif;
+    color: #e1e1e1;
+    font-size: 25px;
+
+}
+.header-btn{
+    background-color: transparent;
+    border: 2px solid #e1e1e1;
+    color: #e1e1e1;
+    font-size: 25px;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+}
+
+/* Header */
+
+/* Fact */
+
+.fact-div{
+    background-color: #ffe600;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.fact-div h3{
+    font-family: 'Raleway', sans-serif;
+}
+/* Fact */
+
+
+/* Porfolio */
+
+.portfolio-div{
+    background-color: #222;
+}
+
+.porfolio-img-row .col{
+    padding: 0 !important;
+}
+
+.porfolio-img-row{
+    margin-top: 3em;
+    padding-left: 10em;
+}
+
+.portfolio-h1{
+    font-family: 'Raleway', sans-serif;
+    padding-top: 2em;
+    color: #eee;
+    margin-bottom: .5em;
+}
+
+.vertical-divider{
+   height: 100px;
+   border-left:1px solid #ffe600;
+   margin-left: 50%;
+
+}
+.portfolio-paragraf{
+    color: #e1e1e1;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    padding-top: 1em;
+    
+}
+
+.va-paragraf{
+    color: #e1e1e1;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    padding-top: 1em;
+    border-right: 1px solid #ffe600;
+    padding-right: 1em;
+}
+/* Portfolio */
