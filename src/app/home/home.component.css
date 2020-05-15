@@ -69,7 +69,6 @@ a {
 
 .portfolio-h1{
     font-family: 'Raleway', sans-serif;
-    padding-top: 2em;
     color: #eee;
     margin-bottom: .5em;
 }
@@ -96,4 +95,45 @@ a {
     border-right: 1px solid #ffe600;
     padding-right: 1em;
 }
+.portfolio-container{
+    padding-top: 7em;
+    padding-bottom: 7em;
+}
 /* Portfolio */
+
+
+/* Tuning  */
+
+.tuning-div{
+    background-color: #F3F4F5;
+}
+
+.tuning-btn{
+    border: 1px solid #222;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.tuning-paragraf{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+.tuning-h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.right-col{
+    border-left: 1px solid #ffe600;
+    padding-left: 2em;
+}
+.tuning-container{
+    padding-top: 7em;
+    padding-bottom: 7em;
+}
+/* Tuning  */
