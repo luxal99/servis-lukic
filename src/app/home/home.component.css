@@ -2,30 +2,32 @@ a {
     color: #e1e1e1;
 }
 
-.nav-link{}
+
+.nav-link {}
 
 /* Header */
-.header-div{
+
+.header-div {
     background-image: url('../../assets/img/audi-service.jpg');
-  
     height: 80vh;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.header-h1{
+
+.header-h1 {
     font-family: 'Raleway', sans-serif;
     color: #ffe600;
     padding-top: 4em;
     font-size: 60px;
 }
 
-.header-paragraf{
+.header-paragraf {
     font-family: 'Raleway', sans-serif;
     color: #e1e1e1;
     font-size: 25px;
-
 }
-.header-btn{
+
+.header-btn {
     background-color: transparent;
     border: 2px solid #e1e1e1;
     color: #e1e1e1;
@@ -40,54 +42,53 @@ a {
 
 /* Fact */
 
-.fact-div{
+.fact-div {
     background-color: #ffe600;
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
-.fact-div h3{
+.fact-div h3 {
     font-family: 'Raleway', sans-serif;
 }
-/* Fact */
 
+/* Fact */
 
 /* Porfolio */
 
-.portfolio-div{
+.portfolio-div {
     background-color: #222;
 }
 
-.porfolio-img-row .col{
+.porfolio-img-row .col {
     padding: 0 !important;
 }
 
-.porfolio-img-row{
+.porfolio-img-row {
     margin-top: 3em;
     padding-left: 10em;
 }
 
-.portfolio-h1{
+.portfolio-h1 {
     font-family: 'Raleway', sans-serif;
     color: #eee;
     margin-bottom: .5em;
 }
 
-.vertical-divider{
-   height: 100px;
-   border-left:1px solid #ffe600;
-   margin-left: 50%;
-
+.vertical-divider {
+    height: 100px;
+    border-left: 1px solid #ffe600;
+    margin-left: 50%;
 }
-.portfolio-paragraf{
+
+.portfolio-paragraf {
     color: #e1e1e1;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     padding-top: 1em;
-    
 }
 
-.va-paragraf{
+.va-paragraf {
     color: #e1e1e1;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
@@ -95,20 +96,21 @@ a {
     border-right: 1px solid #ffe600;
     padding-right: 1em;
 }
-.portfolio-container{
+
+.portfolio-container {
     padding-top: 7em;
     padding-bottom: 7em;
 }
-/* Portfolio */
 
+/* Portfolio */
 
 /* Tuning  */
 
-.tuning-div{
+.tuning-div {
     background-color: #F3F4F5;
 }
 
-.tuning-btn{
+.tuning-btn {
     border: 1px solid #222;
     padding-top: .3em;
     padding-bottom: .3em;
@@ -118,22 +120,75 @@ a {
     font-size: 20px;
 }
 
-.tuning-paragraf{
+.tuning-paragraf {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
 }
 
-.tuning-h1{
+.tuning-h1 {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }
 
-.right-col{
-    border-left: 1px solid #ffe600;
+.right-col {
+    border-left: 2px solid #ffe600;
     padding-left: 2em;
 }
-.tuning-container{
+
+.tuning-container {
     padding-top: 7em;
     padding-bottom: 7em;
 }
+
 /* Tuning  */
+
+/* Key */
+
+.key-div {
+    background-color: #F3F4F5;
+}
+
+.left-col {
+    padding-top: 5em;
+    border-left: 2px solid #ffe600;
+    padding-left: 2em;
+}
+
+/* Key */
+
+/* About */
+
+.about-div {
+    width: 99%;
+}
+
+.white-col{
+    background-color: #F3F4F5;
+}
+
+.yellow-col{
+    background-color: #ffe600;
+}
+
+.black-col{
+    background-color: #222;
+}
+
+.card-content{
+    padding: 5em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card-content, p{
+    padding-top: 2em;
+}
+
+.card-content,h2{
+    padding-top: 2em;
+}
+
+.yellow-paragraf{
+    color: #ffe600;
+    padding-top: 2em;
+}
+/* About */
