@@ -1,0 +1,119 @@
+.row {
+    margin: 0 !important;
+}
+
+/* Header */
+
+.header-div {
+    background-color: #F3F4F5;
+}
+
+.header-h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
+    color: #222;
+}
+
+.tuning-paragraf {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+.header-btn {
+    background-color: transparent;
+    border: 2px solid #222;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: .3em;
+    padding-top: .3em;
+    font-size: 20px;
+}
+
+.header-row {
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+
+/* Header */
+
+/* Tuning fact */
+
+.car-col {
+    background-image: url('../../assets/img/porsche-track.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+.tuning-yellow-h1 {
+    color: #ffe600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.tuning-left-col {
+    padding-left: 5em;
+    padding-top: 10em;
+}
+
+.tuning-white-h1 {
+    color: #eee;
+    line-height: 25px;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 2em;
+}
+
+.vertical-divider {
+    border-left: 2px solid #ffe600;
+    height: 30px;
+    margin-left: 5%;
+    margin-top: 1em;
+}
+
+.tuning-fact-paragraf {
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    padding-top: 1em;
+}
+
+
+
+.fact-container {
+    background-color: #F3F4F5;
+    margin-top: 15%;
+    padding: 5em;
+    -webkit-box-shadow: 10px 10px 40px -17px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 40px -17px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 40px -17px rgba(0, 0, 0, 0.75);
+
+}
+
+/* Tuning fact */
+
+/* Alien */
+
+.alien-div{
+    background-color: #222;
+}
+
+.vertical-divider-large{
+    border-left: 2px solid #ffe600;
+    height: 80px;
+    margin-left: 50%;
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+.alien-paragraf{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: #eee;
+}
+.alien-h1{
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 3em;
+}
+.alient-row{
+    padding-top: 5em;
+}
+/* Alien */
