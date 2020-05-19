@@ -12,6 +12,11 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { MaterialModule } from './material.module';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddPhotoDialogComponent } from './admin-cms/add-photo-dialog/add-photo-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import {  AngularFireStorageModule } from 'angularfire2/storage';
+import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/photo-preview-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +27,31 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminCmsComponent,
     LoginCmsComponent,
     PortfolioComponent,
-    FooterComponent
+    FooterComponent,
+    AddPhotoDialogComponent,
+    PhotoPreviewDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBsdW760wcZFFC0_yXO8EYzaX_oNuNq9CQ",
+      authDomain: "servis-lukic.firebaseapp.com",
+      databaseURL: "https://servis-lukic.firebaseio.com",
+      projectId: "servis-lukic",
+      storageBucket: "servis-lukic.appspot.com",
+      messagingSenderId: "521991648329",
+      appId: "1:521991648329:web:f0d280671912eeb2273b98",
+      measurementId: "G-JL5DYEZD9M"
+    }),
     MaterialModule
   ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
   providers: [],
+  entryComponents:[AddPhotoDialogComponent,PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
