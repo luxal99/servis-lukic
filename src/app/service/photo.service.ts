@@ -6,9 +6,15 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class PhotoService {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  save(photo){
-      return this.http.post("/admin/photo",photo,{responseType:'text'})
+  save(photo) {
+    return this.http.post("/admin/photo", photo, { responseType: 'text' })
   }
+
+  getAll() {
+    return this.http.get("/admin/photo", { responseType: 'json' });
+  }
+
+
 }

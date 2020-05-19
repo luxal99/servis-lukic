@@ -12,7 +12,7 @@ import { PhotoService } from 'src/app/service/photo.service';
 })
 export class AddPhotoDialogComponent implements OnInit {
 
-  listOfCategory:any=[];
+  listOfCategory: any = [];
   listOfTestimonialImage: Array<Photo> = [];
   fileUploadList: Array<File> = [];
   isReady = 'Nije spremno';
@@ -23,10 +23,11 @@ export class AddPhotoDialogComponent implements OnInit {
   percentage = 0;
 
   photoForm = new FormGroup({
-    category: new FormControl("",Validators.required)
+    category: new FormControl("", Validators.required),
+    isUploaded: new FormControl("", Validators.required)
   })
 
-  constructor(public categoryService: CategoryService,public photoService:PhotoService,private _snackBar: MatSnackBar,public afStorage: AngularFireStorage) { }
+  constructor(public categoryService: CategoryService, public photoService: PhotoService, private _snackBar: MatSnackBar, public afStorage: AngularFireStorage) { }
 
   ngOnInit() {
     this.getAll()
@@ -34,7 +35,7 @@ export class AddPhotoDialogComponent implements OnInit {
   }
 
   addFiles(event) {
-    
+
     for (let index = 0; index < event.length; index++) {
       if (event[index].size / 1000 > 500) {
         this.openSnackBar("Prevelik fajl", "DONE");
@@ -51,9 +52,9 @@ export class AddPhotoDialogComponent implements OnInit {
   }
 
   getAll() {
-    this.categoryService.getAll().subscribe(data=>{
+    this.categoryService.getAll().subscribe(data => {
       this.listOfCategory = data;
-    }) 
+    })
   }
 
 
@@ -75,9 +76,9 @@ export class AddPhotoDialogComponent implements OnInit {
           ti.url = data;
           this.listOfTestimonialImage.push(ti);
 
-          // this.toggle.writeValue(true);
-          // this.isReady = 'Spremno je';
-          // document.getElementById('toggle').style.color = "#4BB543";
+          this.toggle.writeValue(true);
+          this.isReady = 'Spremno je';
+          document.getElementById('toggle').style.color = "#4BB543";
 
         });
       }
@@ -87,12 +88,12 @@ export class AddPhotoDialogComponent implements OnInit {
 
   savePhoto() {
     for (const image of this.listOfTestimonialImage) {
-      console.log(image);
       image.category = this.photoForm.get('category').value;
 
+      console.log(image);
       this.photoService.save(image).subscribe(data => {
         console.log(data);
-        
+
       })
     }
   }

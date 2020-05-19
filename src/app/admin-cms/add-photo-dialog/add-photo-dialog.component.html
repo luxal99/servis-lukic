@@ -24,15 +24,19 @@
         <mat-form-field appearance="outline" style="width: 80%;">
             <mat-label>Select me</mat-label>
             <mat-select formControlName="category">
-              <mat-option *ngFor="let item of listOfCategory" value="item">
+              <mat-option *ngFor="let item of listOfCategory" [value]="item">
                 {{item.title}}
               </mat-option>
             </mat-select>
           </mat-form-field>
      </div>
+     <div class="text-center" style="margin-bottom: 1em;">
+      <mat-slide-toggle  #toggle id="toggle" formControlName="isUploaded" [style.color]="isReady ? 'red':'#4BB543' ">{{isReady}}</mat-slide-toggle>
+       
+     </div>
      <div class="text-center">
        <button class="upload-btn" mat-raised-button (click)="uploadFiles()">Upload</button>
-       <button class="save-btn" mat-raised-button (click)="savePhoto()">Save</button>
+       <button class="save-btn" mat-raised-button (click)="savePhoto()" [disabled]="!toggle.checked">Save</button>
      </div>
     </form>
 </div>
