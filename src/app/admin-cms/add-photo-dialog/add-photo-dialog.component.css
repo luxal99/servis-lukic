@@ -10,8 +10,8 @@
     border-radius: 10px;
 }
 
-::ng-deep.mat-tab-label{
- color: #121212 !important;
+::ng-deep.mat-tab-label {
+    color: #121212 !important;
 }
 
 .uploadfilecontainer:hover {
@@ -42,19 +42,18 @@
     width: 30px;
 }
 
-.upload-btn{
+.upload-btn {
     background-color: #222;
     color: #ffe600;
     width: 40%;
 }
 
-.save-btn{
+.save-btn {
     background-color: #ffe600;
     color: #222;
     margin-left: 1em;
     width: 40%;
 }
-
 
 ::ng-deep .mat-progress-bar-buffer {
     background: #555;
@@ -67,14 +66,15 @@
     margin-bottom: .5em;
 }
 
-h1{
+h1 {
     font-family: 'Raleway', sans-serif;
 }
 
-mat-label{
+mat-label {
     color: #555;
 }
 
 ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
     color: #555 !important;
-  }
+}
+

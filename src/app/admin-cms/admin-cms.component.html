@@ -12,7 +12,7 @@
     </div>
     <div class="container admin-container">
      <div class="row">
-        <div class="col-3">
+        <div class="col-sm-3">
             <div>
                 <button mat-button>Lorem</button>
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="col"></div>
-        <div class="col-8">
+        <div class="col-sm-8">
             <div class="photo-div">
                 <div class="text-left" style="padding-top: 1em;padding-bottom: 1em;">
                     <button (click)="openDialog()" mat-raised-button color="primary">Lorem</button>
@@ -33,21 +33,21 @@
 
                     <!-- Position Column -->
                     <ng-container matColumnDef="title">
-                        <th mat-header-cell *matHeaderCellDef>File name </th>
-                        <td mat-cell *matCellDef="let element">{{element.fileName}}</td>
+                        <th mat-header-cell *matHeaderCellDef class="text-center">File name </th>
+                        <td class="text-center" mat-cell *matCellDef="let element">{{element.fileName}}</td>
                     </ng-container>
 
-                    <ng-container matColumnDef="category">
+                    <ng-container matColumnDef="category" class="text-center">
                         <th mat-header-cell *matHeaderCellDef>Category</th>
-                        <td mat-cell *matCellDef="let element">{{element.category.title}}</td>
+                        <td class="text-center" mat-cell *matCellDef="let element">{{element.category.title}}</td>
                     </ng-container>
 
                     <!-- Name Column -->
-                    <ng-container matColumnDef="option">
-                        <th mat-header-cell *matHeaderCellDef> Name </th>
-                        <td mat-cell *matCellDef="let element">
-                            <button mat-raised-button>Lorem</button>
-                            <button mat-button>Lorem</button>
+                    <ng-container matColumnDef="option" class="text-center">
+                        <th mat-header-cell *matHeaderCellDef> </th>
+                        <td class="text-center" mat-cell *matCellDef="let element">
+                            <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
+                            <button mat-raised-button class="delete-btn" (click)="deletePhoto(element._id,element.fileName)">Delete</button>
                         </td>
                     </ng-container>
 
@@ -62,4 +62,4 @@
         </div>
      </div>
     </div>
-</div>
+</div>s

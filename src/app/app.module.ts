@@ -16,6 +16,7 @@ import { AddPhotoDialogComponent } from './admin-cms/add-photo-dialog/add-photo-
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import {  AngularFireStorageModule } from 'angularfire2/storage';
+import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/photo-preview-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {  AngularFireStorageModule } from 'angularfire2/storage';
     LoginCmsComponent,
     PortfolioComponent,
     FooterComponent,
-    AddPhotoDialogComponent
+    AddPhotoDialogComponent,
+    PhotoPreviewDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,7 @@ import {  AngularFireStorageModule } from 'angularfire2/storage';
     MaterialModule
   ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
   providers: [],
-  entryComponents:[AddPhotoDialogComponent],
+  entryComponents:[AddPhotoDialogComponent,PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
