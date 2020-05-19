@@ -4,12 +4,26 @@
     <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="addFiles($event)">
       <input hidden type="file" #fileInput multiple (change)="addFiles($event.target.files)">
     </div>
+
+    <div style="padding-left: 5em;padding-right: 5em;" *ngFor="let file of fileUploadList;let i=index">
+      <div class="row">
+        <div class="col">
+          <p>{{file.name}}</p>
+        </div>
+        <div class="col text-right">
+          <button class="delete-file" (click)="deleteAttachment(i)">
+            <img class="img-fluid" width="30px" src="../../../assets/img/Environment_Glyph-09-512.webp">
+          </button>
+        </div>
+      </div>
+      <mat-progress-bar mode="determinate" [value]="percentage"></mat-progress-bar><br>
+    </div>
     
     <form [formGroup]="photoForm">
-     <div>
-        <mat-form-field appearance="outline">
+     <div class="text-center">
+        <mat-form-field appearance="outline" style="width: 80%;">
             <mat-label>Select me</mat-label>
-            <mat-select>
+            <mat-select formControlName="category">
               <mat-option *ngFor="let item of listOfCategory" value="item">
                 {{item.title}}
               </mat-option>
@@ -17,8 +31,8 @@
           </mat-form-field>
      </div>
      <div class="text-center">
-       <button class="upload-btn" mat-raised-button>Upload</button>
-       <button class="save-btn" mat-raised-button>Save</button>
+       <button class="upload-btn" mat-raised-button (click)="uploadFiles()">Upload</button>
+       <button class="save-btn" mat-raised-button (click)="savePhoto()">Save</button>
      </div>
     </form>
 </div>
