@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddPhotoDialogComponent } from './add-photo-dialog/add-photo-dialog.component';
 
 @Component({
   selector: 'app-admin-cms',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCmsComponent implements OnInit {
 
-  constructor() { }
+  listOfPhotos :any=[];
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit() {
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddPhotoDialogComponent, {
+      width: 'auto',
+    });
+  }
+
+
+  photoColumns:string[]=['title','option']
 
 }

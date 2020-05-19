@@ -1,0 +1,39 @@
+.admin-cms-div {
+    height: 100vh;
+    background-image: url('../../assets/img/Vector.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 30em;
+}
+
+.col-3 {
+    -webkit-box-shadow: 2px 11px 58px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 11px 58px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 11px 58px -11px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    margin-top: 5%;
+}
+
+.col-8 {
+    -webkit-box-shadow: 2px 11px 53px -23px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 11px 53px -23px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 11px 53px -23px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    margin-top: 5%;
+}
+
+.nav-container {
+    -webkit-box-shadow: 2px 11px 58px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 11px 58px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 11px 58px -11px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 5%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+table{
+    width: 100%;
+}

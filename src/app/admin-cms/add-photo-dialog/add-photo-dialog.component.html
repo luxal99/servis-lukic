@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Dodaj sliku</h1>
+
+    <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="addFiles($event)">
+      <input hidden type="file" #fileInput multiple (change)="addFiles($event.target.files)">
+    </div>
+    
+    <form [formGroup]="photoForm">
+     <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Select me</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let item of listOfCategory" value="item">
+                {{item.title}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+     </div>
+     <div class="text-center">
+       <button class="upload-btn" mat-raised-button>Upload</button>
+       <button class="save-btn" mat-raised-button>Save</button>
+     </div>
+    </form>
+</div>
