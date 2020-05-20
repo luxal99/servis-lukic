@@ -16,8 +16,12 @@ export class PhotoService {
     return this.http.get("/admin/photo", { responseType: 'json' });
   }
 
-  delete(_id){
-    return this.http.delete("/admin/photo/"+_id,{responseType:'text'});
+  delete(_id) {
+    return this.http.delete("/admin/photo/" + _id, { responseType: 'text' });
+  }
+
+  getLastThree() {
+    return this.http.get("/admin/photo/three", { responseType: 'json' });
   }
 
 
