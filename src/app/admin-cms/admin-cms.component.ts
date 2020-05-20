@@ -6,8 +6,8 @@ import { PhotoPreviewDialogComponent } from "./photo-preview-dialog/photo-previe
 import { AngularFireStorage } from 'angularfire2/storage'
 import { EditPhotoDialogComponent } from './edit-photo-dialog/edit-photo-dialog.component';
 import { AuthService } from '../service/auth.service';
-import { auth } from 'firebase';
-import { Route } from '@angular/compiler/src/core';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,11 +18,26 @@ import { Router } from '@angular/router';
 export class AdminCmsComponent implements OnInit {
 
   listOfPhotos: any = [];
+
+  barChartLegend = true;
+  barChartPlugins = [];
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+
+  barChartLabels: Label[] = [];
+  barChartType: ChartType = 'bar';
+  taskGraphList: any = [];
+
+  barChartData: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
+  barChartDataForUserId: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
+
   constructor(public dialog: MatDialog,public router:Router, public photoService: PhotoService, public afStorage: AngularFireStorage,public authService:AuthService) { }
 
   ngOnInit() {
   this.auth()
     this.getPhotos();
+    this.getBarChartData();
   }
 
   auth(){
@@ -47,6 +62,26 @@ export class AdminCmsComponent implements OnInit {
   getPhotos() {
     this.photoService.getAll().subscribe(data => {
       this.listOfPhotos = data;
+    })
+  }
+
+  getBarChartData(){
+    
+    this.barChartData[0].data = [];
+    this.taskGraphList = [];
+    this.barChartLabels = [];
+
+    var empty = 0;
+
+    this.photoService.countPhotoByCategory().subscribe(data=>{
+      this.taskGraphList = data;
+      this.taskGraphList.forEach(element => {
+        this.barChartLabels.push(element.label);
+        this.barChartData[0].data.push(element.value)
+
+      });
+
+      this.barChartData[0].data.push(empty)
     })
   }
 

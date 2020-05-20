@@ -24,5 +24,8 @@ export class PhotoService {
     return this.http.delete("/admin/photo/" + _id, { responseType: 'text' });
   }
 
+  countPhotoByCategory(){
+    return this.http.get("/admin/category/analytics",{responseType:'json'});
+  }
 
 }

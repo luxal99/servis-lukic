@@ -5,27 +5,38 @@
                 <img src="../../assets/img/sl-yellow.png" width="50px" alt="" class="img-fluid">
             </div>
             <div class="col text-right">
-                <button mat-button >Lorem</button>
-                <button mat-button>Lorem</button>
+                <button mat-button >SLWA</button>
+                <button mat-button>Logout</button>
             </div>
         </div>
     </div>
     <div class="container admin-container">
+        <div class="row">
+            <div class="col">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                [chartType]="barChartType">
+            </canvas>
+            </div>
+
+            <div class="col">
+                <div class="text-left">
+                    <button (click)="openDialog()" mat-raised-button class="add-photo-btn"><i class="fa fa-upload"></i></button>
+                </div>
+            </div>
+        </div>
      <div class="row">
         <div class="col-sm-3" style="padding: 0 !important;">
             <div>
-                <button mat-button style="width: 100%;">Lorem</button>
+                <button mat-button style="width: 100%;">Photos</button>
             </div>
             <div>
-                <button mat-button style="width: 100%;">Lorem</button>
+                <button mat-button style="width: 100%;">Messages</button>
             </div>
         </div>
         <div class="col"></div>
         <div class="col-sm-8">
             <div class="photo-div">
-                <div class="text-left" style="padding-top: 1em;padding-bottom: 1em;">
-                    <button (click)="openDialog()" mat-raised-button color="primary">Add</button>
-                </div>
                 <table mat-table [dataSource]="listOfPhotos" class="mat-elevation-z8">
 
                     <ng-container matColumnDef="title">
