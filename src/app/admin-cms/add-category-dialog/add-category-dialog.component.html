@@ -1,1 +1,13 @@
-<p>add-category-dialog works!</p>
+<form [formGroup]="addCategoryForm">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input formControlName="title" matInput>
+            <mat-hint>Title of category</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div class="text-center">
+        <button mat-raised-button color="primary" style="width: 100%;" (click)="add()">Save</button>
+    </div>
+</form>

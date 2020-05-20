@@ -59,7 +59,7 @@ import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-
     MaterialModule
   ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
   providers: [],
-  entryComponents:[AddPhotoDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
+  entryComponents:[AddPhotoDialogComponent,AddCategoryDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

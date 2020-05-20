@@ -9,6 +9,7 @@ import { AuthService } from '../service/auth.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { Router } from '@angular/router';
+import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
 
 @Component({
   selector: 'app-admin-cms',
@@ -110,6 +111,12 @@ export class AdminCmsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getPhotos();
+    });
+  }
+
+  openAddCategoryDialog(): void {
+    const dialogRef = this.dialog.open(AddCategoryDialogComponent, {
+      width: 'auto'
     });
   }
 

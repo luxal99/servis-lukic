@@ -12,5 +12,9 @@ export class CategoryService {
     return this.http.get('/admin/category',{responseType:'json'})
   }
 
+  add(category){
+    return this.http.post("/admin/category",category,{responseType:'text'})
+  }
+
   
 }
