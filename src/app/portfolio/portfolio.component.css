@@ -96,7 +96,19 @@ nav {
 .figure-h5{
      font-family: 'Raleway', cursive;
      color: #222;
-     background-color: #F3F4F5;
+}
+
+.figure-description{
+    background-color: #F3F4F5;
+    padding: 1em .5em 1em .5em;
+
+}
+
+.figure-paragraf{
+     font-family: 'Raleway', cursive;
+     font-size: 20px;
+     line-height: 10px;
+     font-weight: bold;
 }
 
 
