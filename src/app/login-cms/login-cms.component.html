@@ -3,23 +3,25 @@
         <div class="row">
             <div class="col text-center login-col">
                 <h1 class="text-left">Login</h1>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Username</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-hint>Hint</mat-hint>
-                      </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-hint>Hint</mat-hint>
-                      </mat-form-field>
-                </div>
+                <form [formGroup]="loginForm">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input formControlName="username" matInput >
+                            <mat-hint>Hint</mat-hint>
+                          </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input formControlName="password" matInput type="password">
+                            <mat-hint>Hint</mat-hint>
+                          </mat-form-field>
+                    </div>
+                </form>
 
                 <div class="text-center btn-div">
-                    <button class="login-btn" mat-button>Login</button>
+                    <button class="login-btn" mat-button (click)="auth()">Login</button>
                 </div>
             </div>
         </div>

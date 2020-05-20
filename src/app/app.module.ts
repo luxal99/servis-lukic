@@ -18,6 +18,7 @@ import { AngularFireModule } from 'angularfire2';
 import {  AngularFireStorageModule } from 'angularfire2/storage';
 import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/photo-preview-dialog.component';
 import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-photo-dialog.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-pho
     FooterComponent,
     AddPhotoDialogComponent,
     PhotoPreviewDialogComponent,
-    EditPhotoDialogComponent
+    EditPhotoDialogComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

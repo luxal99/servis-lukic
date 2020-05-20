@@ -5,33 +5,29 @@
                 <img src="../../assets/img/sl-yellow.png" width="50px" alt="" class="img-fluid">
             </div>
             <div class="col text-right">
-                <button mat-button>Lorem</button>
+                <button mat-button >Lorem</button>
                 <button mat-button>Lorem</button>
             </div>
         </div>
     </div>
     <div class="container admin-container">
      <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-3" style="padding: 0 !important;">
             <div>
-                <button mat-button>Lorem</button>
+                <button mat-button style="width: 100%;">Lorem</button>
             </div>
             <div>
-                <button mat-button>Lorem</button>
+                <button mat-button style="width: 100%;">Lorem</button>
             </div>
         </div>
         <div class="col"></div>
         <div class="col-sm-8">
             <div class="photo-div">
                 <div class="text-left" style="padding-top: 1em;padding-bottom: 1em;">
-                    <button (click)="openDialog()" mat-raised-button color="primary">Lorem</button>
+                    <button (click)="openDialog()" mat-raised-button color="primary">Add</button>
                 </div>
                 <table mat-table [dataSource]="listOfPhotos" class="mat-elevation-z8">
 
-                    <!--- Note that these columns can be defined in any order.
-                          The actual rendered columns are set as a property on the row definition" -->
-
-                    <!-- Position Column -->
                     <ng-container matColumnDef="title">
                         <th mat-header-cell *matHeaderCellDef class="text-center">File name </th>
                         <td class="text-center" mat-cell *matCellDef="let element">{{element.fileName}}</td>
@@ -42,7 +38,6 @@
                         <td class="text-center" mat-cell *matCellDef="let element">{{element.category.title}}</td>
                     </ng-container>
 
-                    <!-- Name Column -->
                     <ng-container matColumnDef="option" class="text-center">
                         <th mat-header-cell *matHeaderCellDef> </th>
                         <td class="text-center" mat-cell *matCellDef="let element">
@@ -51,9 +46,6 @@
                             <button mat-raised-button class="delete-btn" (click)="deletePhoto(element._id,element.fileName)">Delete</button>
                         </td>
                     </ng-container>
-
-                    <!-- Weight Column -->
-
                     <tr mat-header-row *matHeaderRowDef="photoColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: photoColumns;"></tr>
                 </table>
