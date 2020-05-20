@@ -4,6 +4,7 @@ import { AddPhotoDialogComponent } from './add-photo-dialog/add-photo-dialog.com
 import { PhotoService } from '../service/photo.service';
 import { PhotoPreviewDialogComponent } from "./photo-preview-dialog/photo-preview-dialog.component";
 import { AngularFireStorage } from 'angularfire2/storage'
+import { EditPhotoDialogComponent } from './edit-photo-dialog/edit-photo-dialog.component';
 
 @Component({
   selector: 'app-admin-cms',
@@ -44,6 +45,17 @@ export class AdminCmsComponent implements OnInit {
     const dialogRef = this.dialog.open(PhotoPreviewDialogComponent, {
       width: 'auto',
       data: image
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getPhotos();
+    });
+  }
+
+  openEditPhotoDialog(photo): void {
+    const dialogRef = this.dialog.open(EditPhotoDialogComponent, {
+      width: 'auto',
+      data: photo
     });
 
     dialogRef.afterClosed().subscribe(result => {

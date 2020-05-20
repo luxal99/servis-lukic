@@ -47,6 +47,7 @@
                         <th mat-header-cell *matHeaderCellDef> </th>
                         <td class="text-center" mat-cell *matCellDef="let element">
                             <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
+                            <button mat-raised-button (click)="openEditPhotoDialog(element)" style="margin-left: 1em;">Edit</button>
                             <button mat-raised-button class="delete-btn" (click)="deletePhoto(element._id,element.fileName)">Delete</button>
                         </td>
                     </ng-container>
@@ -62,4 +63,4 @@
         </div>
      </div>
     </div>
-</div>s
+</div>
