@@ -20,6 +20,7 @@ import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/ph
 import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-photo-dialog.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ChartsModule } from 'ng2-charts';
+import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-category-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { ChartsModule } from 'ng2-charts';
     AddPhotoDialogComponent,
     PhotoPreviewDialogComponent,
     EditPhotoDialogComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    AddCategoryDialogComponent
   ],
   imports: [
     BrowserModule,
