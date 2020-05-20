@@ -78,3 +78,7 @@ mat-label {
     color: #555 !important;
 }
 
+
+mat-form-field{
+    width: 80%;
+}

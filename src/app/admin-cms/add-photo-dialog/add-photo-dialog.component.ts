@@ -24,6 +24,7 @@ export class AddPhotoDialogComponent implements OnInit {
 
   photoForm = new FormGroup({
     category: new FormControl("", Validators.required),
+    desctiption:new FormControl("",Validators.required),
     isUploaded: new FormControl("", Validators.required)
   })
 
