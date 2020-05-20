@@ -1,1 +1,54 @@
-<p>portfolio works!</p>
+<div class="header">
+  <nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav text-right">
+        <li class="nav-item active ">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container header-container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="../../assets/img/900-9004948_auto-mechanic-student 1.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-sm">
+        <h6 class="header-h6">Lorem</h6>
+        <h1 class="header-h1">Portfolio</h1>
+        <p class="header-paragraf">Lorem Ipsum is simply dummy text of the printing and</p>
+        <button class="header-btn">Lorem</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="image-div text-center">
+  <div class="container text-center">
+    <ul class="category-ul">
+      <li class="category-li" *ngFor="let item of listOfCategory">{{item.title}}</li>
+      <li class="all-li category-li">All</li>
+    </ul>
+  </div>
+
+  <div class="text-center">
+    <div class="portfolio-div">
+      <div class="figure" *ngFor="let photo of listOfPhotos">
+          <img src="{{photo.url}}" width="300px" height="300px" alt="">
+          <h5 class="text-left figure-h5">{{photo.category.title}}</h5>
+            
+      </div>
+    </div>
+  </div>
+
+</div>

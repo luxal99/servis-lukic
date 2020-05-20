@@ -6,11 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategoryService {
 
-  constructor(public http:HttpClient) { }
-
-  getAll(){
-    return this.http.get('/admin/category',{responseType:'json'})
+  constructor(public http: HttpClient) { }
+  getAll() {
+    return this.http.get('/admin/category', { responseType: 'json' })
   }
 
-  
+
 }
