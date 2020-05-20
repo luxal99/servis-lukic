@@ -10,9 +10,9 @@ import { PhotoService } from '../service/photo.service';
 export class PortfolioComponent implements OnInit {
 
   listOfCategory: any = [];
-  listOfPhotos:any=[];
+  listOfPhotos: any = [];
 
-  constructor(public categoryService: CategoryService,public photoService:PhotoService) { }
+  constructor(public categoryService: CategoryService, public photoService: PhotoService) { }
 
   ngOnInit() {
     this.getCategories();
@@ -25,10 +25,27 @@ export class PortfolioComponent implements OnInit {
     })
   }
 
-  getPhotos(){
-    this.photoService.getAll().subscribe(data=>{
+  getPhotos() {
+    this.photoService.getAll().subscribe(data => {
       this.listOfPhotos = data;
     })
+
+    return this.listOfPhotos
+  }
+
+  sortList(category) {
+    
+    this.getPhotos()
+
+    setTimeout(() => {
+      let sorted = this.listOfPhotos.filter(item => item.category.title === category);
+      this.listOfPhotos = sorted;
+    }, 200);
+
+
+
+
+
   }
 
 }
