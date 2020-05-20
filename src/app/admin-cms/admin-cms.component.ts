@@ -45,6 +45,10 @@ export class AdminCmsComponent implements OnInit {
       width: 'auto',
       data: image
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getPhotos();
+    });
   }
 
 

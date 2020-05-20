@@ -4,4 +4,5 @@ export class Photo {
     url;
     fileName;
     category: PhotoCategory;
+    description
 }
