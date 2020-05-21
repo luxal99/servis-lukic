@@ -1,6 +1,8 @@
 <div class="header-div">
   <nav class="navbar navbar-expand-lg ">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
+      <img src="../../assets/img/sl-white.png" alt="" width="50px" class="img-fluid">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -63,20 +65,39 @@
     <div class="vertical-divider text-center"></div>
     <div class="row porfolio-img-row">
       <div class="col text-right">
-        <img src="../../assets/img/sta-sve-spada-u-mali-servis 1.png" alt="" class="img-fluid">
+        <figure class="imghvr-zoom-out-right">
+          <img [src]="listOfPhotos[0].url" height="400px" width="450px" alt="">
+          <figcaption class="text-center" style="padding-top: 40%;">
+            {{listOfPhotos[0].category.title}}
+          </figcaption>
+        </figure>
+
       </div>
       <div class="col text-left">
         <div class="col">
-          <img src="../../assets/img/GRIFFIN-CAR-SERVICE 1.png" alt="">
+          <figure class="imghvr-zoom-out-right">
+            <img [src]="listOfPhotos[1].url" width="300px" height="200px" alt="">
+            <figcaption class="text-center small-caption" style="padding-top: 30%;">
+              {{listOfPhotos[1].category.title}}
+            </figcaption>
+          </figure>
+
         </div>
         <div class="col">
-          <img src="../../assets/img/GRIFFIN-CAR-SERVICE 1.png" alt="">
+          <figure class="imghvr-zoom-out-right">
+            <img [src]="listOfPhotos[2].url" width="300px" height="200px" alt="">
+            <figcaption class="text-center small-caption" style="padding-top: 30%;">
+              {{listOfPhotos[2].category.title}}
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
     <p class="portfolio-paragraf">Lorem ipsum dolor nunc exdaw</p>
     <div class="text-right">
-      <p class="va-paragraf">View all</p>
+      <a [routerLink]="['/portfolio']" routerLinkActive="router-link-active">
+        <p class="va-paragraf">View all</p>
+      </a>
     </div>
   </div>
 </div>
