@@ -11,6 +11,7 @@ import { Color, Label } from 'ng2-charts';
 import { Router } from '@angular/router';
 import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
 import { MessageService } from '../service/message.service';
+import { MailPreviewDialogComponent } from "./mail-preview-dialog/mail-preview-dialog.component";
 
 @Component({
   selector: 'app-admin-cms',
@@ -20,7 +21,7 @@ import { MessageService } from '../service/message.service';
 export class AdminCmsComponent implements OnInit {
 
   listOfPhotos: any = [];
-  listOfMessages:any=[];
+  listOfMessages: any = [];
   listOfMenuOptions: Array<any> =
     [
       { id: 'photo', title: 'Photos', div: 'photo-div', },
@@ -40,9 +41,9 @@ export class AdminCmsComponent implements OnInit {
   barChartData: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
   barChartDataForUserId: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
 
-  constructor(public dialog: MatDialog, public router: Router, 
+  constructor(public dialog: MatDialog, public router: Router,
     public photoService: PhotoService, public afStorage: AngularFireStorage,
-     public authService: AuthService,public messageService:MessageService) { }
+    public authService: AuthService, public messageService: MessageService) { }
 
   ngOnInit() {
     this.auth()
@@ -63,10 +64,10 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
-  btnPropertyDefault(){
+  btnPropertyDefault() {
     setTimeout(() => {
-      document.getElementById('photo').style.backgroundColor='#222';
-      document.getElementById('photo').style.color='#ffe600';
+      document.getElementById('photo').style.backgroundColor = '#222';
+      document.getElementById('photo').style.color = '#ffe600';
     }, 1);
   }
 
@@ -86,30 +87,33 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
-   getElementId(event) {
+  getElementId(event) {
 
-    let elementId: string = event.target.id;
-    let showItem = this.listOfMenuOptions.filter(item => item.id === elementId);
+    var showItem = []
 
-   setTimeout(() => {
-    var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== elementId);
-    hiddenItems.forEach(item => {
-      document.getElementById(item.div).style.display = 'none';
-      document.getElementById(item.id).style.backgroundColor='';
-      document.getElementById(item.id).style.color='';
-    })
-   }, 100);
+    setTimeout(() => {
+      showItem = this.listOfMenuOptions.filter(item => item.id === event.target.id);
+    }, 100);
 
-   setTimeout(() => {
-    document.getElementById(showItem[0].div).style.display = 'block';
-    document.getElementById(showItem[0].id).style.backgroundColor='#222';
-      document.getElementById(showItem[0].id).style.color='#ffe600';
-   }, 200);
+    setTimeout(() => {
+      var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== event.target.id);
+      hiddenItems.forEach(item => {
+        document.getElementById(item.div).style.display = 'none';
+        document.getElementById(item.id).style.backgroundColor = '';
+        document.getElementById(item.id).style.color = '';
+      })
+    }, 200);
+
+    setTimeout(() => {
+      document.getElementById(showItem[0].div).style.display = 'block';
+      document.getElementById(showItem[0].id).style.backgroundColor = '#222';
+      document.getElementById(showItem[0].id).style.color = '#ffe600';
+    }, 300);
   }
 
 
-  getMessages(){
-    this.messageService.getInbox().subscribe(data=>{
+  getMessages() {
+    this.messageService.getInbox().subscribe(data => {
       this.listOfMessages = data;
     })
   }
@@ -151,6 +155,17 @@ export class AdminCmsComponent implements OnInit {
     });
   }
 
+  openMailPreviewDialog(mail): void {
+    const dialogRef = this.dialog.open(MailPreviewDialogComponent, {
+      width: 'auto',
+      data: mail
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getPhotos();
+    });
+  }
+
   openEditPhotoDialog(photo): void {
     const dialogRef = this.dialog.open(EditPhotoDialogComponent, {
       width: 'auto',
@@ -170,6 +185,6 @@ export class AdminCmsComponent implements OnInit {
 
 
   photoColumns: string[] = ['title', 'category', 'option']
-  messageColumns: string[] = ['fullanme', 'subject', 'date','option']
+  messageColumns: string[] = ['fullanme', 'subject', 'date', 'option']
 
 }
