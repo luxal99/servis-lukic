@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -9,7 +9,18 @@ import { TuningComponent } from './tuning/tuning.component';
 import { AdminCmsComponent } from './admin-cms/admin-cms.component';
 import { LoginCmsComponent } from './login-cms/login-cms.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-
+import { MaterialModule } from './material.module';
+import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddPhotoDialogComponent } from './admin-cms/add-photo-dialog/add-photo-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import {  AngularFireStorageModule } from 'angularfire2/storage';
+import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/photo-preview-dialog.component';
+import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-photo-dialog.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ChartsModule } from 'ng2-charts';
+import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-category-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +29,37 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     TuningComponent,
     AdminCmsComponent,
     LoginCmsComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    FooterComponent,
+    AddPhotoDialogComponent,
+    PhotoPreviewDialogComponent,
+    EditPhotoDialogComponent,
+    ErrorPageComponent,
+    AddCategoryDialogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    HttpClientModule,
+    
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ChartsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBsdW760wcZFFC0_yXO8EYzaX_oNuNq9CQ",
+      authDomain: "servis-lukic.firebaseapp.com",
+      databaseURL: "https://servis-lukic.firebaseio.com",
+      projectId: "servis-lukic",
+      storageBucket: "servis-lukic.appspot.com",
+      messagingSenderId: "521991648329",
+      appId: "1:521991648329:web:f0d280671912eeb2273b98",
+      measurementId: "G-JL5DYEZD9M"
+    }),
+    MaterialModule
+  ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
   providers: [],
+  entryComponents:[AddPhotoDialogComponent,AddCategoryDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
