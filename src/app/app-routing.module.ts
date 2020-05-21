@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginCmsComponent },
   { path: 'panel', component: AdminCmsComponent },
-  { path: 'portfolio', component: PortfolioComponent }
+  { path: 'portfolio', component: PortfolioComponent },
   {path:'panel',component:AdminCmsComponent,canActivate:[AuthService]},
   {path:'error',component:ErrorPageComponent}
 
