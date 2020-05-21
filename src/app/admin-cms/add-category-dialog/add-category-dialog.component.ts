@@ -9,21 +9,39 @@ import { CategoryService } from 'src/app/service/category.service';
 })
 export class AddCategoryDialogComponent implements OnInit {
 
-  constructor(public categoryService:CategoryService) { }
+  listOfCategory: any = [];
+
+  constructor(public categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.get();
   }
 
   addCategoryForm = new FormGroup({
-    title : new FormControl("",Validators.required)
+    title: new FormControl("", Validators.required)
   })
 
-  add(){
-    let category = {title:this.addCategoryForm.get("title").value}
-    this.categoryService.add(category).subscribe(data=>{
+  add() {
+    let category = { title: this.addCategoryForm.get("title").value }
+    this.categoryService.add(category).subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  get() {
+    this.categoryService.getAll().subscribe(data => {
+      this.listOfCategory = data;
+    })
+  }
+
+  delete(_id){
+    this.categoryService.delete(_id).subscribe(data=>{
       console.log(data);
       
     })
   }
+
+
+  categoryColumns: string[] = ['title', 'option']
 
 }

@@ -16,5 +16,9 @@ export class CategoryService {
     return this.http.post("/admin/category",category,{responseType:'text'})
   }
 
+  delete(_id){
+    return this.http.delete("/admin/category/"+_id,{responseType:'text'})
+  }
+
   
 }
