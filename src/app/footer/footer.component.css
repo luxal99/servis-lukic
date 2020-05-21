@@ -1,0 +1,40 @@
+.footer-div {
+    background-color: #222;
+}
+
+.footer-div, h1 {
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ffe600 !important;
+}
+
+::ng-deep.input.mat-input-element {
+    color: #eee !important;
+}
+
+mat-label {
+    color: #eee;
+}
+
+mat-form-field {
+    width: 80%;
+}
+
+.footer-container {
+    padding-top: 10em;
+}
+
+.footer-btn {
+    background-color: #ffe600;
+    border: 0 !important;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    width: 80%;
+    font-size: 20px;
+    -webkit-box-shadow: 10px 10px 44px -20px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 44px -20px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 44px -20px rgba(0, 0, 0, 0.75);
+}

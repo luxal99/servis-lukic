@@ -1,0 +1,84 @@
+.uploadfilecontainer {
+    background-image: url("../../../assets/img/download-from-cloud.png");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    height: 200px;
+    width: 80%;
+    margin: 20px auto;
+    border: 2px dashed #ffe600;
+    border-radius: 10px;
+}
+
+::ng-deep.mat-tab-label {
+    color: #121212 !important;
+}
+
+.uploadfilecontainer:hover {
+    cursor: pointer;
+    background-color: #9ecbec !important;
+    opacity: 0.8;
+}
+
+.files-list {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px auto;
+    background: #ffffff;
+    border: 1px dashed;
+    border-radius: 12px;
+    padding: 5px;
+    color: #ffe600;
+}
+
+.files-list .delete-file {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.files-list .delete-file img {
+    width: 30px;
+}
+
+.upload-btn {
+    background-color: #222;
+    color: #ffe600;
+    width: 40%;
+}
+
+.save-btn {
+    background-color: #ffe600;
+    color: #222;
+    margin-left: 1em;
+    width: 40%;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: #555;
+}
+
+.delete-file {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: .5em;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+}
+
+mat-label {
+    color: #555;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #555 !important;
+}
+
+
+mat-form-field{
+    width: 80%;
+}
