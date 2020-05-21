@@ -9,6 +9,7 @@ export class CategoryService extends AbstractService{
 
   constructor(public http:HttpClient) {
     super(http);
-    super.route = 'category'
+    super.route = '/admin/';
+    super.path = 'category';
   }
 }
