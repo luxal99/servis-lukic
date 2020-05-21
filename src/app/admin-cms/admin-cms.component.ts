@@ -19,6 +19,7 @@ import { AddCategoryDialogComponent } from './add-category-dialog/add-category-d
 export class AdminCmsComponent implements OnInit {
 
   listOfPhotos: any = [];
+  listOfMessages:any=[];
   listOfMenuOptions: Array<any> =
     [
       { id: 'photo', title: 'Photos', div: 'photo-div' },
@@ -93,6 +94,10 @@ export class AdminCmsComponent implements OnInit {
 
   }
 
+  getMessages(){
+    
+  }
+
   getBarChartData() {
 
     this.barChartData[0].data = [];
@@ -149,5 +154,6 @@ export class AdminCmsComponent implements OnInit {
 
 
   photoColumns: string[] = ['title', 'category', 'option']
+  messageColumns: string[] = ['fullanme', 'subject', 'date','option']
 
 }

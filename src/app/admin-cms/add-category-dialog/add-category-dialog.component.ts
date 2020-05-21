@@ -23,7 +23,7 @@ export class AddCategoryDialogComponent implements OnInit {
 
   add() {
     let category = { title: this.addCategoryForm.get("title").value }
-    this.categoryService.add(category).subscribe(data => {
+    this.categoryService.save(category).subscribe(data => {
       console.log(data);
     })
   }
