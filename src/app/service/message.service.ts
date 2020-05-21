@@ -9,6 +9,7 @@ export class MessageService extends AbstractService{
 
   constructor(public http:HttpClient) {
     super(http);
-    super.route = 'message';
+    super.route = '/user/';
+    super.path = 'message';
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../service/photo.service';
+import { Photo } from '../classes/Photo';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,17 @@ import { PhotoService } from '../service/photo.service';
 })
 export class HomeComponent implements OnInit {
 
-  listOfPhotos: any = [];
+  listOfPhotos: Array<Photo> = [];
+
+  firstPic = ''
+  secPic = ''
+  thrPic = ''
+
+  firstCat = '';
+  secCat = '';
+  thrCat = ''
+
+  
 
   constructor(public photoService: PhotoService) { }
 
@@ -18,9 +29,15 @@ export class HomeComponent implements OnInit {
 
   getLastThree() {
     this.photoService.getLastThree().subscribe(data => {
-      this.listOfPhotos = data
-      console.log(this.listOfPhotos);
-      
+      this.listOfPhotos =  data as Array<Photo>
+
+      this.firstPic = this.listOfPhotos[0].url;
+      this.secPic = this.listOfPhotos[1].url;
+      this.thrPic = this.listOfPhotos[2].url;
+
+      this.firstCat =  this.listOfPhotos[0].category.title;
+      this.secCat =  this.listOfPhotos[1].category.title;
+      this.thrCat =  this.listOfPhotos[2].category.title;
     })
   }
 

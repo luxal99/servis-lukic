@@ -7,24 +7,25 @@ import { HttpClient } from '@angular/common/http';
 export class AbstractService {
 
   public route = ''
+  public path = ''
 
   constructor(public http: HttpClient) { }
 
 
   save(object) {
-    return this.http.post("/admin/" + this.route, object, { responseType: 'text' })
+    return this.http.post(this.route + this.path, object, { responseType: 'text' })
   }
 
   getAll() {
-    return this.http.get("/admin/" + this.route, { responseType: 'json' })
+    return this.http.get(this.route + this.path, { responseType: 'json' })
   }
 
   update(object) {
-    return this.http.put("/admin/" + this.route, object, { responseType: 'text' })
+    return this.http.put(this.route + this.path, object, { responseType: 'text' })
   }
 
   delete(_id) {
-    return this.http.delete("/admin/" + this.route + '/' + _id, { responseType: 'text' })
+    return this.http.delete(this.route + this.path + '/' + _id, { responseType: 'text' })
   }
 
 }
