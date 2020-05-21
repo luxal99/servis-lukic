@@ -40,7 +40,6 @@ export class EditPhotoDialogComponent implements OnInit {
     }
     
     this.photoService.update(photo).subscribe(data=>{
-      console.log(data);
       
     })
     

@@ -31,12 +31,8 @@ export class FooterComponent implements OnInit {
     message.subject = this.messageForm.get('subject').value;
     message.message = this.messageForm.get('message').value;
 
-    console.log(message);
+    this.messageService.save(message).subscribe(data => {
 
-
-    this.messageService.save(message).subscribe(data=>{
-      console.log(data);
-      
     })
 
   }

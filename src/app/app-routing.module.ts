@@ -12,11 +12,11 @@ import { KeyComponent } from './key/key.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginCmsComponent },
-  { path: 'panel', component: AdminCmsComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'panel', component: AdminCmsComponent, canActivate: [AuthService] },
   { path: 'error', component: ErrorPageComponent },
-  { path: 'key', component: KeyComponent }
+  { path: 'key', component: KeyComponent },
+  {path:'**',component:ErrorPageComponent}
 
 ];
 

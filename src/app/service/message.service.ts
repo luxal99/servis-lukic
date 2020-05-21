@@ -12,4 +12,8 @@ export class MessageService extends AbstractService{
     super.route = '/user/';
     super.path = 'message';
   }
+
+  getInbox(){
+    return this.http.get("/admin/message",{responseType:'json'})
+  }
 }

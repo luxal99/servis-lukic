@@ -2,23 +2,23 @@
     <div class="container nav-container">
         <div class="row">
             <div class="col">
-                <img src="../../assets/img/sl-yellow.png" width="50px" alt="" class="img-fluid">
+                <img src="../../assets/img/sl-white.png" width="50px" alt="" class="img-fluid">
             </div>
             <div class="col text-right">
                 <button mat-button>SLWA</button>
-                <button mat-button>Logout</button>
+                <button mat-button (click)="logout()">Logout</button>
             </div>
         </div>
     </div>
     <div class="container admin-container">
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
                     [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
                 </canvas>
             </div>
 
-            <div class="col">
+            <div class="col-sm">
                 <div class="text-left">
                     <button (click)="openDialog()" mat-raised-button class="add-photo-btn"><i
                             class="fa fa-upload"></i></button>
@@ -72,7 +72,7 @@
 
                         <ng-container matColumnDef="fullanme">
                             <th mat-header-cell *matHeaderCellDef class="text-center">Fullname</th>
-                            <td class="text-center" mat-cell *matCellDef="let element">{{element.fullname}}</td>
+                            <td class="text-center" mat-cell *matCellDef="let element">{{element.full_name}}</td>
                         </ng-container>
 
                         <ng-container matColumnDef="subject" class="text-center">
@@ -88,7 +88,7 @@
                         <ng-container matColumnDef="option" class="text-center">
                             <th mat-header-cell *matHeaderCellDef> </th>
                             <td class="text-center" mat-cell *matCellDef="let element">
-                                <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
+                                <button mat-raised-button (click)="openMailPreviewDialog(element)">Preview</button>
                                 <button mat-raised-button class="delete-btn"
                                     (click)="deletePhoto(element._id,element.fileName)">Delete</button>
                             </td>

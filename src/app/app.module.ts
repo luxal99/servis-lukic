@@ -21,6 +21,8 @@ import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-pho
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ChartsModule } from 'ng2-charts';
 import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-category-dialog.component';
+import { MailPreviewDialogComponent } from './admin-cms/mail-preview-dialog/mail-preview-dialog.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +37,14 @@ import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-
     PhotoPreviewDialogComponent,
     EditPhotoDialogComponent,
     ErrorPageComponent,
-    AddCategoryDialogComponent
+    AddCategoryDialogComponent,
+    MailPreviewDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    CKEditorModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ChartsModule,
@@ -59,7 +62,7 @@ import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-
     MaterialModule
   ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
   providers: [],
-  entryComponents:[AddPhotoDialogComponent,AddCategoryDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
+  entryComponents:[AddPhotoDialogComponent,MailPreviewDialogComponent,AddCategoryDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

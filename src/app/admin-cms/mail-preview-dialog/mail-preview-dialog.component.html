@@ -1,0 +1,28 @@
+<form [formGroup]="messageForm">
+    <div class="text-center">
+        <mat-form-field appearance="outline">
+          <mat-label>Type text</mat-label>
+          <input matInput formControlName="mail">
+          <mat-hint>Short description</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="text-center">
+        <mat-form-field appearance="outline">
+          <mat-label>Type text</mat-label>
+          <input matInput formControlName="subject">
+          <mat-hint>Short description</mat-hint>
+        </mat-form-field>
+      </div>
+</form>
+
+<div class="message-div">
+  <h4>{{data.message}}</h4>
+</div>
+
+<div>
+    <ckeditor #editor [editor]="Editor" ></ckeditor>
+</div>
+
+<div class="text-center">
+    <button mat-raised-button class="send-btn">Send</button>
+</div>
