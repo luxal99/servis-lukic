@@ -138,6 +138,11 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
+  logout(){
+    localStorage.removeItem("token");
+    location.reload();
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddPhotoDialogComponent, {
       width: 'auto'

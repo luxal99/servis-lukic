@@ -11,10 +11,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginCmsComponent },
-  { path: 'panel', component: AdminCmsComponent },
   { path: 'portfolio', component: PortfolioComponent },
   {path:'panel',component:AdminCmsComponent,canActivate:[AuthService]},
-  {path:'error',component:ErrorPageComponent}
+  {path:'error',component:ErrorPageComponent},
+  {path:'**',component:ErrorPageComponent}
 
 ];
 

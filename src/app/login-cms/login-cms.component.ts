@@ -25,9 +25,8 @@ export class LoginCmsComponent implements OnInit {
 
     this.authService.auth(admin).subscribe(data => {
       if (data !== null) {
-        console.log(data);
         
-        localStorage.setItem("token", data[0]['password']);
+        localStorage.setItem("token", data);
         this.router.navigate(['/panel']);
       }
     })
