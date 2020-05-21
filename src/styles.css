@@ -7,3 +7,8 @@
 nav{
     font-family: 'Raleway', sans-serif;
 }
+
+.nav-link:hover{
+    color: #999;
+    transition: .5s ease;
+}

@@ -17,6 +17,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     this.getCategories();
     this.getPhotos();
+    window.scrollTo(0,0);
   }
 
   getCategories() {

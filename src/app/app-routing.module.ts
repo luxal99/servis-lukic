@@ -7,6 +7,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AuthService } from './service/auth.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { KeyComponent } from './key/key.component';
+import { TuningComponent } from './tuning/tuning.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'panel', component: AdminCmsComponent, canActivate: [AuthService] },
   { path: 'error', component: ErrorPageComponent },
   { path: 'key', component: KeyComponent },
-  {path:'**',component:ErrorPageComponent}
+  { path: 'tuning', component: TuningComponent },
+  { path: '**', component: ErrorPageComponent }
 
 ];
 
