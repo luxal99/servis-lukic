@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from '../service/photo.service';
+import { Photo } from '../classes/Photo';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listOfPhotos: Array<Photo> = [];
+
+  firstPic = ''
+  secPic = ''
+  thrPic = ''
+
+  firstCat = '';
+  secCat = '';
+  thrCat = ''
+
+  
+
+  constructor(public photoService: PhotoService) { }
 
   ngOnInit() {
+    this.getLastThree();
+  }
+
+  getLastThree() {
+    this.photoService.getLastThree().subscribe(data => {
+      this.listOfPhotos =  data as Array<Photo>
+
+      this.firstPic = this.listOfPhotos[0].url;
+      this.secPic = this.listOfPhotos[1].url;
+      this.thrPic = this.listOfPhotos[2].url;
+
+      this.firstCat =  this.listOfPhotos[0].category.title;
+      this.secCat =  this.listOfPhotos[1].category.title;
+      this.thrCat =  this.listOfPhotos[2].category.title;
+    })
   }
 
 }

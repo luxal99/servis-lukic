@@ -1,0 +1,129 @@
+/* Header */
+
+.header-btn {
+    padding: .3em 3em .3em 3em;
+    font-size: 20px;
+    border: 2px solid #ffe600;
+    background-color: transparent;
+    color: #eee;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.header {
+    background-color: #222;
+    border-bottom: 1px solid #ffe600;
+}
+
+nav {
+    border-bottom: .5px solid #eee;
+}
+
+.header-h6 {
+    font-family: 'Raleway', cursive;
+    color: #eee;
+    padding-top: 25%;
+    line-height: 1px;
+}
+
+.header-h1 {
+    font-family: 'Righteous', cursive;
+    color: #ffe600;
+}
+
+.header-paragraf {
+    font-family: 'Raleway', cursive;
+    font-size: 20px;
+    color: #eee;
+}
+
+.header-container {
+    padding-top: 5em;
+}
+
+.nav-link {
+    color: #eee;
+}
+
+/* Header */
+
+/* Images */
+
+.image-div {
+    background-color: #222;
+}
+
+.category-li {
+    list-style-type: none;
+    font-size: 25px;
+    font-family: 'Raleway', cursive;
+    display: inline;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #eee;
+}
+
+.category-ul {
+    padding-top: 2em;
+}
+
+.category-li:hover{
+    color: #ffe600;
+    transition: .2s ease-in;
+}
+
+.all-li {
+    border-left: 1px solid #ffe600;
+}
+
+.porfolio-container {
+    font-size: 0;
+    display: -ms-flexbox;
+    -ms-flexbox-wrap: wrap;
+    -ms-flexbox-direction: column;
+    flex-flow: row wrap;
+    display: -webkit-box;
+    display: flex;
+}
+
+.porfolio-div {
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+}
+
+.figure {
+    padding: 5em;
+    transition: ease .5s;
+}
+
+.figure-img{
+    -webkit-box-shadow: 4px 11px 38px -12px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: 4px 11px 38px -12px rgba(0, 0, 0, 0.69);
+    box-shadow: 4px 11px 38px -12px rgba(0, 0, 0, 0.69);
+}
+
+.figure-h5 {
+    font-family: 'Raleway', cursive;
+    color: #222;
+}
+
+.figure-description {
+    background-color: #F3F4F5;
+    padding: 1em .5em 1em .5em;
+    -webkit-box-shadow: 4px 11px 38px -12px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: 4px 11px 38px -12px rgba(0, 0, 0, 0.69);
+    box-shadow: 4px 11px 38px -12px rgba(0, 0, 0, 0.69);
+}
+
+.figure-paragraf {
+    font-family: 'Raleway', cursive;
+    font-size: 20px;
+    line-height: 10px;
+    font-weight: bold;
+}
+
+/* Images */

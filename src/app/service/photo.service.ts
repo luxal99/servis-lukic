@@ -9,11 +9,17 @@ export class PhotoService extends AbstractService{
 
   constructor(public http: HttpClient) {
     super(http);
-    super.route = 'photo'
+    super.route = '/admin/';
+    super.path = 'photo';
    }
 
   countPhotoByCategory(){
     return this.http.get("/admin/category/analytics",{responseType:'json'});
+  }
+
+
+  getLastThree() {
+    return this.http.get("/admin/photo/three", { responseType: 'json' });
   }
 
 }
