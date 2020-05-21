@@ -12,3 +12,13 @@ nav{
     color: #999;
     transition: .5s ease;
 }
+
+::-webkit-scrollbar{
+    height: 1em;
+    background-color: #222;
+
+}
+::-webkit-scrollbar-thumb {
+    background: #ffe600;
+    border-radius: 10px;
+  }

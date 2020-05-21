@@ -23,6 +23,7 @@ import { ChartsModule } from 'ng2-charts';
 import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-category-dialog.component';
 import { MailPreviewDialogComponent } from './admin-cms/mail-preview-dialog/mail-preview-dialog.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { TypingAnimationDirective } from 'angular-typing-animation'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     EditPhotoDialogComponent,
     ErrorPageComponent,
     AddCategoryDialogComponent,
-    MailPreviewDialogComponent
+    MailPreviewDialogComponent,
+    TypingAnimationDirective
   ],
   imports: [
     BrowserModule,
