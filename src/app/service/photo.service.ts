@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AbstractService } from './abstract.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PhotoService {
+export class PhotoService extends AbstractService{
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {
+    super(http);
+    super.route = '/admin/';
+    super.path = 'photo';
+   }
 
-  save(photo) {
-    return this.http.post("/admin/photo", photo, { responseType: 'text' })
+  countPhotoByCategory(){
+    return this.http.get("/admin/category/analytics",{responseType:'json'});
   }
 
-  getAll() {
-    return this.http.get("/admin/photo", { responseType: 'json' });
-  }
-
-  delete(_id) {
-    return this.http.delete("/admin/photo/" + _id, { responseType: 'text' });
-  }
 
   getLastThree() {
     return this.http.get("/admin/photo/three", { responseType: 'json' });
   }
-
 
 }

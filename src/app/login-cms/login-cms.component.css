@@ -37,3 +37,10 @@ h1{
      font-family: 'Raleway', sans-serif;
      padding-top: 1em;
 }
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #555 !important;
+}
+mat-label{
+    color: #555555;
+}

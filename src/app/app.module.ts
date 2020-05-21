@@ -17,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import {  AngularFireStorageModule } from 'angularfire2/storage';
 import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/photo-preview-dialog.component';
-
+import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-photo-dialog.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ChartsModule } from 'ng2-charts';
+import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-category-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +32,19 @@ import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/ph
     PortfolioComponent,
     FooterComponent,
     AddPhotoDialogComponent,
-    PhotoPreviewDialogComponent
+    PhotoPreviewDialogComponent,
+    EditPhotoDialogComponent,
+    ErrorPageComponent,
+    AddCategoryDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    ChartsModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyBsdW760wcZFFC0_yXO8EYzaX_oNuNq9CQ",
@@ -51,7 +59,7 @@ import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/ph
     MaterialModule
   ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
   providers: [],
-  entryComponents:[AddPhotoDialogComponent,PhotoPreviewDialogComponent],
+  entryComponents:[AddPhotoDialogComponent,AddCategoryDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

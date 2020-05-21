@@ -20,8 +20,15 @@
     </div>
     
     <form [formGroup]="photoForm">
+      <div class="text-center">
+        <mat-form-field appearance="outline">
+          <mat-label>Type text</mat-label>
+          <input matInput formControlName="description">
+          <mat-hint>Short description</mat-hint>
+        </mat-form-field>
+      </div>
      <div class="text-center">
-        <mat-form-field appearance="outline" style="width: 80%;">
+        <mat-form-field appearance="outline" >
             <mat-label>Select me</mat-label>
             <mat-select formControlName="category">
               <mat-option *ngFor="let item of listOfCategory" [value]="item">

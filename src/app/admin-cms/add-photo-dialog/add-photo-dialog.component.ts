@@ -24,6 +24,7 @@ export class AddPhotoDialogComponent implements OnInit {
 
   photoForm = new FormGroup({
     category: new FormControl("", Validators.required),
+    description:new FormControl("",Validators.required),
     isUploaded: new FormControl("", Validators.required)
   })
 
@@ -88,8 +89,9 @@ export class AddPhotoDialogComponent implements OnInit {
 
   savePhoto() {
     for (const image of this.listOfTestimonialImage) {
-      image.category = this.photoForm.get('category').value;
 
+      image.category = this.photoForm.get('category').value;
+      image.description = this.photoForm.get('description').value
       console.log(image);
       this.photoService.save(image).subscribe(data => {
         console.log(data);

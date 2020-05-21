@@ -2,64 +2,104 @@
     <div class="container nav-container">
         <div class="row">
             <div class="col">
-                <h4>Lorem</h4>
+                <img src="../../assets/img/sl-yellow.png" width="50px" alt="" class="img-fluid">
             </div>
             <div class="col text-right">
-                <button mat-button>Lorem</button>
-                <button mat-button>Lorem</button>
+                <button mat-button>SLWA</button>
+                <button mat-button>Logout</button>
             </div>
         </div>
     </div>
     <div class="container admin-container">
-     <div class="row">
-        <div class="col-sm-3">
-            <div>
-                <button mat-button>Lorem</button>
+        <div class="row">
+            <div class="col">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                    [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                </canvas>
             </div>
-            <div>
-                <button mat-button>Lorem</button>
-            </div>
-        </div>
-        <div class="col"></div>
-        <div class="col-sm-8">
-            <div class="photo-div">
-                <div class="text-left" style="padding-top: 1em;padding-bottom: 1em;">
-                    <button (click)="openDialog()" mat-raised-button color="primary">Lorem</button>
+
+            <div class="col">
+                <div class="text-left">
+                    <button (click)="openDialog()" mat-raised-button class="add-photo-btn"><i
+                            class="fa fa-upload"></i></button>
+                    <button (click)="openAddCategoryDialog()" mat-raised-button class="add-photo-btn"
+                        style="margin-left: 1em;">Category</button>
                 </div>
-                <table mat-table [dataSource]="listOfPhotos" class="mat-elevation-z8">
-
-                    <!--- Note that these columns can be defined in any order.
-                          The actual rendered columns are set as a property on the row definition" -->
-
-                    <!-- Position Column -->
-                    <ng-container matColumnDef="title">
-                        <th mat-header-cell *matHeaderCellDef class="text-center">File name </th>
-                        <td class="text-center" mat-cell *matCellDef="let element">{{element.fileName}}</td>
-                    </ng-container>
-
-                    <ng-container matColumnDef="category" class="text-center">
-                        <th mat-header-cell *matHeaderCellDef>Category</th>
-                        <td class="text-center" mat-cell *matCellDef="let element">{{element.category.title}}</td>
-                    </ng-container>
-
-                    <!-- Name Column -->
-                    <ng-container matColumnDef="option" class="text-center">
-                        <th mat-header-cell *matHeaderCellDef> </th>
-                        <td class="text-center" mat-cell *matCellDef="let element">
-                            <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
-                            <button mat-raised-button class="delete-btn" (click)="deletePhoto(element._id,element.fileName)">Delete</button>
-                        </td>
-                    </ng-container>
-
-                    <!-- Weight Column -->
-
-                    <tr mat-header-row *matHeaderRowDef="photoColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: photoColumns;"></tr>
-                </table>
-
-
             </div>
         </div>
-     </div>
+        <div class="row">
+            <div class="col-sm-3" style="padding: 0 !important;">
+                <div *ngFor="let button of listOfMenuOptions">
+                    <button mat-button style="width: 100%;" id="{{button.id}}"
+                        (click)="getElementId($event)">{{button.title}}</button>
+                </div>
+            </div>
+            <div class="col"></div>
+            <div class="col-sm-8" id="photo-div">
+                <div class="photo-div">
+                    <table mat-table [dataSource]="listOfPhotos" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="title">
+                            <th mat-header-cell *matHeaderCellDef class="text-center">File name </th>
+                            <td class="text-center" mat-cell *matCellDef="let element">{{element.fileName}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="category" class="text-center">
+                            <th mat-header-cell *matHeaderCellDef>Category</th>
+                            <td class="text-center" mat-cell *matCellDef="let element">{{element.category.title}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="option" class="text-center">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td class="text-center" mat-cell *matCellDef="let element">
+                                <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
+                                <button mat-raised-button (click)="openEditPhotoDialog(element)"
+                                    style="margin-left: 1em;">Edit</button>
+                                <button mat-raised-button class="delete-btn"
+                                    (click)="deletePhoto(element._id,element.fileName)">Delete</button>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="photoColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: photoColumns;"></tr>
+                    </table>
+
+
+                </div>
+            </div>
+            <div class="col-sm-8" id="message-div" style="display: none;">
+                <div class="message-div">
+                    <table mat-table [dataSource]="listOfMessages" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="fullanme">
+                            <th mat-header-cell *matHeaderCellDef class="text-center">Fullname</th>
+                            <td class="text-center" mat-cell *matCellDef="let element">{{element.fullname}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="subject" class="text-center">
+                            <th mat-header-cell *matHeaderCellDef>Category</th>
+                            <td class="text-center" mat-cell *matCellDef="let element">{{element.subject}}</td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="date" class="text-center">
+                            <th mat-header-cell *matHeaderCellDef>Category</th>
+                            <td class="text-center" mat-cell *matCellDef="let element">{{element.subject}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="option" class="text-center">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td class="text-center" mat-cell *matCellDef="let element">
+                                <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
+                                <button mat-raised-button class="delete-btn"
+                                    (click)="deletePhoto(element._id,element.fileName)">Delete</button>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="messageColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: messageColumns;"></tr>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
     </div>
-</div>s
+</div>

@@ -20,6 +20,8 @@
     box-shadow: 2px 11px 53px -23px rgba(0, 0, 0, 0.75);
     background-color: #fff;
     margin-top: 5%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .nav-container {
@@ -30,8 +32,6 @@
     padding-top: 1em;
     padding-bottom: 1em;
     margin-top: 5%;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
 }
 
 table {
@@ -42,4 +42,11 @@ table {
     background-color: red;
     color: #eee;
     margin-left: 1em;
+}
+
+.add-photo-btn{
+    padding: 2em;
+    margin-top: 2em;
+    font-size: 20px;
+    width: 48%;
 }
