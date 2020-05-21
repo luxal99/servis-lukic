@@ -19,6 +19,11 @@ import { AddCategoryDialogComponent } from './add-category-dialog/add-category-d
 export class AdminCmsComponent implements OnInit {
 
   listOfPhotos: any = [];
+  listOfMenuOptions: Array<any> =
+    [
+      { id: 'photo', title: 'Photos', div: 'photo-div' },
+      { id: 'message', title: 'Messages', div: 'message-div' }
+    ]
 
   barChartLegend = true;
   barChartPlugins = [];
@@ -33,20 +38,20 @@ export class AdminCmsComponent implements OnInit {
   barChartData: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
   barChartDataForUserId: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
 
-  constructor(public dialog: MatDialog,public router:Router, public photoService: PhotoService, public afStorage: AngularFireStorage,public authService:AuthService) { }
+  constructor(public dialog: MatDialog, public router: Router, public photoService: PhotoService, public afStorage: AngularFireStorage, public authService: AuthService) { }
 
   ngOnInit() {
-  this.auth()
+    this.auth()
     this.getPhotos();
     this.getBarChartData();
   }
 
-  auth(){
-    const token = {token:localStorage.getItem("token")};
-    this.authService.checkToken(token).subscribe(data=>{
-     data !== true ? this.router.navigate(['/error']): this.router.navigate(['/panel'])
-     
-      
+  auth() {
+    const token = { token: localStorage.getItem("token") };
+    this.authService.checkToken(token).subscribe(data => {
+      data !== true ? this.router.navigate(['/error']) : this.router.navigate(['/panel'])
+
+
     })
   }
 
@@ -66,15 +71,37 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
-  getBarChartData(){
+  getElementId(event: Event) {
+    let elementId: string = (event.target as Element).id;
+    console.log(elementId);
     
+
+    let showItem = this.listOfMenuOptions.filter(item => item.id === elementId);
+   setTimeout(() => {
+    var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== elementId);
+    hiddenItems.forEach(item => {
+      document.getElementById(item.div).style.display = 'none';
+    })
+   }, 100);
+
+   setTimeout(() => {
+    document.getElementById(showItem[0].div).style.display = 'block';
+
+   }, 200);
+
+    // do something with the id... 
+
+  }
+
+  getBarChartData() {
+
     this.barChartData[0].data = [];
     this.taskGraphList = [];
     this.barChartLabels = [];
 
     var empty = 0;
 
-    this.photoService.countPhotoByCategory().subscribe(data=>{
+    this.photoService.countPhotoByCategory().subscribe(data => {
       this.taskGraphList = data;
       this.taskGraphList.forEach(element => {
         this.barChartLabels.push(element.label);
