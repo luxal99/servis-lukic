@@ -10,6 +10,7 @@ import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { Router } from '@angular/router';
 import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
+import { MessageService } from '../service/message.service';
 
 @Component({
   selector: 'app-admin-cms',
@@ -22,8 +23,8 @@ export class AdminCmsComponent implements OnInit {
   listOfMessages:any=[];
   listOfMenuOptions: Array<any> =
     [
-      { id: 'photo', title: 'Photos', div: 'photo-div' },
-      { id: 'message', title: 'Messages', div: 'message-div' }
+      { id: 'photo', title: 'Photos', div: 'photo-div', },
+      { id: 'message', title: 'Messages', div: 'message-div', }
     ]
 
   barChartLegend = true;
@@ -39,13 +40,19 @@ export class AdminCmsComponent implements OnInit {
   barChartData: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
   barChartDataForUserId: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
 
-  constructor(public dialog: MatDialog, public router: Router, public photoService: PhotoService, public afStorage: AngularFireStorage, public authService: AuthService) { }
+  constructor(public dialog: MatDialog, public router: Router, 
+    public photoService: PhotoService, public afStorage: AngularFireStorage,
+     public authService: AuthService,public messageService:MessageService) { }
 
   ngOnInit() {
     this.auth()
     this.getPhotos();
+    this.getMessages();
     this.getBarChartData();
+    this.btnPropertyDefault();
   }
+
+
 
   auth() {
     const token = { token: localStorage.getItem("token") };
@@ -54,6 +61,13 @@ export class AdminCmsComponent implements OnInit {
 
 
     })
+  }
+
+  btnPropertyDefault(){
+    setTimeout(() => {
+      document.getElementById('photo').style.backgroundColor='#222';
+      document.getElementById('photo').style.color='#ffe600';
+    }, 1);
   }
 
 
@@ -72,30 +86,32 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
-  getElementId(event: Event) {
-    let elementId: string = (event.target as Element).id;
-    console.log(elementId);
-    
+   getElementId(event) {
 
+    let elementId: string = event.target.id;
     let showItem = this.listOfMenuOptions.filter(item => item.id === elementId);
+
    setTimeout(() => {
     var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== elementId);
     hiddenItems.forEach(item => {
       document.getElementById(item.div).style.display = 'none';
+      document.getElementById(item.id).style.backgroundColor='';
+      document.getElementById(item.id).style.color='';
     })
    }, 100);
 
    setTimeout(() => {
     document.getElementById(showItem[0].div).style.display = 'block';
-
+    document.getElementById(showItem[0].id).style.backgroundColor='#222';
+      document.getElementById(showItem[0].id).style.color='#ffe600';
    }, 200);
-
-    // do something with the id... 
-
   }
 
+
   getMessages(){
-    
+    this.messageService.getInbox().subscribe(data=>{
+      this.listOfMessages = data;
+    })
   }
 
   getBarChartData() {
