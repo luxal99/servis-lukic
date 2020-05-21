@@ -6,6 +6,7 @@ import { AdminCmsComponent } from './admin-cms/admin-cms.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AuthService } from './service/auth.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { KeyComponent } from './key/key.component';
 
 
 const routes: Routes = [
@@ -13,8 +14,9 @@ const routes: Routes = [
   { path: 'login', component: LoginCmsComponent },
   { path: 'panel', component: AdminCmsComponent },
   { path: 'portfolio', component: PortfolioComponent },
-  {path:'panel',component:AdminCmsComponent,canActivate:[AuthService]},
-  {path:'error',component:ErrorPageComponent}
+  { path: 'panel', component: AdminCmsComponent, canActivate: [AuthService] },
+  { path: 'error', component: ErrorPageComponent },
+  { path: 'key', component: KeyComponent }
 
 ];
 
