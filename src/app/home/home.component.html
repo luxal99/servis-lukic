@@ -1,6 +1,7 @@
 
 <div>
-  <div class="header-div">
+ 
+  <div class="header-div" #top>
     <nav class="navbar navbar-expand-lg ">
       <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
         <img src="../../assets/img/sl-white.png" alt="" width="50px" class="img-fluid">
@@ -11,6 +12,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav text-right">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/']" routerLinkActive="router-link-active">Početna</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active">Tuning</a>
           </li>
@@ -35,13 +39,15 @@
               Naše iskustvo govori o nama.Budi i ti jedan od zadovoljnih klijenata.
             </span>
           </div>
-          <button class="header-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Više</button>
+          <button (click)="scrollToElement(more)" class="header-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Više <i class="fa fa-arrow-down"></i></button>
         </div>
   
       </div>
+
+      <button id="fixed-btn" (click)="scrollToElement(top)" mat-raised-button><i class="fa fa-arrow-up"></i></button>
     </div>
   </div>
-  <div class="fact-div">
+  <div class="fact-div" #more>
     <div class="container text-center">
       <div class="row">
         <div class="col-sm">
@@ -49,17 +55,17 @@
             class="img-fluid">
           <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">DPF/EGR Flaps off</h3>
         </div>
-        <div class="col-sm">
+        <div class="col-sm fact-col">
           <img src="../../assets/img/53128-svg 1.png" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"
             class="img-fluid">
           <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">Chip tuning</h3>
         </div>
-        <div class="col-sm">
+        <div class="col-sm fact-col">
           <img src="../../assets/img/wrench-icon-png-free-download-wrench-png-png-720_720 1.png" data-aos="fade-right"
             data-aos-duration="1000" data-aos-delay="300" class="img-fluid">
           <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">Kompletno servisiranje</h3>
         </div>
-        <div class="col-sm">
+        <div class="col-sm fact-col">
           <img src="../../assets/img/img_561138 1.png" style="height: 100px;" class="img-fluid" data-aos="fade-right"
             data-aos-duration="1000" data-aos-delay="400">
           <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">Izrada i kodiranje</h3>
@@ -105,7 +111,7 @@
         uspešne radove</p>
       <div class="text-right">
         <a [routerLink]="['/portfolio']" routerLinkActive="router-link-active">
-          <p class="va-paragraf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">Pogledaj sve</p>
+          <p class="va-paragraf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">Pogledaj sve <i class="fa fa-arrow-right"></i></p>
         </a>
       </div>
     </div>
@@ -125,7 +131,7 @@
             snage motora,a ujedno i smanjenje potrošnje.
           </p>
           <button class="tuning-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"
-            [routerLink]="['/tuning']" routerLinkActive="router-link-active">Saznaj više</button>
+            [routerLink]="['/tuning']" routerLinkActive="router-link-active">Saznaj više <i class="fa fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -141,7 +147,7 @@
               poznate brendove automobila.
             </p>
             <button class="tuning-btn" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300"
-              [routerLink]="['/key']" routerLinkActive="router-link-active">Saznaj više</button>
+              [routerLink]="['/key']" routerLinkActive="router-link-active">Saznaj više <i class="fa fa-arrow-right"></i></button>
           </div>
         </div>
         <div class="col-sm key-img-col">

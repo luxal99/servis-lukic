@@ -15,8 +15,8 @@
 
                         </div>
                     </div>
-                    <div class="col-sm">
-                        <div>
+                    <div class="col-sm" style="margin-left:2em;">
+                        <div >
                             <mat-form-field appearance="outline">
                                 <mat-label>E-mail</mat-label>
                                 <input formControlName="mail" matInput placeholder="Placeholder">
@@ -35,7 +35,7 @@
 
                 </div>
                 <div class="text-center">
-                    <button class="footer-btn" (click)="send()">Pošalji</button>
+                    <button class="footer-btn" (click)="send()" [disabled]="messageForm.invalid">Pošalji</button>
                 </div>
             </form>
 
@@ -44,10 +44,13 @@
     <div class="copyright-div">
         <div class="row">
             <div class="col">
-                <h5>Copyright 2020 | <a href="">Alemarc</a> | Sva prava zadrzana</h5>
+                <h5>Copyright 2020 | Sva prava zadrzana</h5>
+            </div>
+            <div class="col text-center">
+                 <h5 ><a href="https://alemarc.dev">Alemarc</a></h5>
             </div>
             <div class="col text-right">
-                <h5><i class="fa fa-instagram" style="font-size: 30px;color: #ffe600;"></i> @servis.lukic</h5>
+                <h5><i class="fa fa-instagram" style="color: #ffe600;"></i> servis.lukic</h5>
             </div>
         </div>
     </div>

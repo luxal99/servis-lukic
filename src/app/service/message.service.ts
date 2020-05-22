@@ -8,9 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class MessageService extends AbstractService{
 
   constructor(public http:HttpClient) {
-    super(http);
-    super.route = '/user/';
-    super.path = 'message';
+    super(http,'/user/','message');
   }
 
   getInbox(){

@@ -7,7 +7,6 @@
     font-family: 'Raleway', sans-serif;
 }
 
-
 ::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
     color: #ffe600 !important;
 }
@@ -25,7 +24,7 @@ mat-form-field {
 }
 
 .footer-container {
-   padding: 10em 30% 10em 30%;
+    padding: 10em 30% 10em 30%;
 }
 
 .footer-btn {
@@ -41,11 +40,11 @@ mat-form-field {
     margin-top: 2em;
 }
 
-form{
+form {
     padding-top: 2em;
 }
 
-.row{
+.row {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
@@ -53,5 +52,33 @@ form{
 h5, a {
     font-family: 'Raleway', sans-serif;
     color: #555;
+}
 
+.col-sm {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.copyright-div{
+    padding-left: 6em;
+    padding-right: 6em;
+}
+
+@media screen and (max-width:600px) {
+    .col-sm {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .footer-container {
+        padding: 10em 10% 10em 10%;
+    }
+    .footer-btn {
+        width: 100%;
+        padding-top: .4em;
+        padding-bottom: .4em;
+    }
+    .copyright-div {
+        padding: 0 1em 1em 1em;
+    }
 }

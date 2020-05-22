@@ -8,9 +8,7 @@ import { AbstractService } from './abstract.service';
 export class PhotoService extends AbstractService{
 
   constructor(public http: HttpClient) {
-    super(http);
-    super.route = '/admin/';
-    super.path = 'photo';
+    super(http,'/admin/','photo');
    }
 
   countPhotoByCategory(){

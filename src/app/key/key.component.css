@@ -7,15 +7,15 @@ nav {
 }
 
 .header-h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-size: 60px;
 }
-
 
 .header-container {
     padding-top: 10%;
 }
 
-p{
+p {
     font-family: 'Raleway', sans-serif !important;
     font-size: 20px;
 }
@@ -25,45 +25,42 @@ p{
     margin-right: 0 !important;
 }
 
-.akl{
+.akl {
     background-image: url('../../assets/img/mercedes.jpg');
     background-size: cover;
     background-position: center;
     height: 70vh;
 }
 
-.akl-row{
+.akl-row {
     padding: 15% 5em 0% 5em;
 }
 
-.akl-h1{
+.akl-h1 {
     font-family: 'Raleway', sans-serif;
     color: #eee;
-
 }
 
-.akl-paragraf{
+.akl-paragraf {
     color: #eee;
     font-family: 'Raleway', sans-serif;
 }
 
-.akl-btn{
+.akl-btn {
     font-size: 20px;
     width: 25%;
 }
 
-@media screen and (max-width:600px){
-    .akl-btn{
+@media screen and (max-width:600px) {
+    .akl-btn {
         width: 100%;
     }
-
-    .akl{
+    .akl {
         background-image: url('../../assets/img/mercedes.jpg');
         background-size: cover;
         background-position: center;
         height: 120vh;
     }
-
 }
 
 @media (min-width: 576px) {
@@ -79,7 +76,6 @@ p{
         width: 20px;
         z-index: 1;
     }
-    
 }
 
 @media (min-width: 576px) {
@@ -138,5 +134,11 @@ p{
         top: 0;
         width: 2px;
         background-color: rgb(234, 234, 234);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .img-col {
+        margin-top: 5em;
     }
 }

@@ -6,11 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AbstractService {
 
-  public route = ''
-  public path = ''
-
-  constructor(public http: HttpClient) { }
-
+  constructor(public http: HttpClient,public route:string,public path:string) { }
 
   save(object) {
     return this.http.post(this.route + this.path, object, { responseType: 'text' })

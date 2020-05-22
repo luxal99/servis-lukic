@@ -42,10 +42,11 @@ export class PortfolioComponent implements OnInit {
       let sorted = this.listOfPhotos.filter(item => item.category.title === category);
       this.listOfPhotos = sorted;
     }, 200);
+  }
 
 
-
-
+  scrollToElement($element): void {
+    $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
   }
 

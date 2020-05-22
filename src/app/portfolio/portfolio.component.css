@@ -19,7 +19,7 @@
 }
 
 nav {
-    border-bottom: .5px solid #eee;
+    border-bottom: .5px solid #333;
 }
 
 .header-h6 {
@@ -124,6 +124,18 @@ nav {
     font-size: 20px;
     line-height: 10px;
     font-weight: bold;
+}
+
+@media screen and (max-width:600px){
+    .category-li{
+        display: block;
+        padding-right: 3em;
+        border-left: 1px solid #ffe600;
+        margin-top: 1em;
+    }.figure-img{
+        width: 250px;
+        height: 250px;
+    }
 }
 
 /* Images */

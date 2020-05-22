@@ -1,4 +1,4 @@
-<div class="header-div">
+<div class="header-div" #top>
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >
       <img src="../../assets/img/sl-yellow.png" width="50px" class="img-fluid" alt="">
@@ -8,26 +8,27 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >
-            Pocetna
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/key']" routerLinkActive="router-link-active" >Key</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="router-link-active" >Portfolio</a>
-        </li>
-      </ul>
+      <ul class="navbar-nav text-right">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/']" routerLinkActive="router-link-active">Početna</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active">Tuning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/key']" routerLinkActive="router-link-active">Ključevi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Radovi</a>
+          </li>
+        </ul>
     </div>
   </nav>
 
   <div class="">
     <div class="row header-row">
       <div class="col-sm text-right">
-        <img src="../../assets/img/c5fe34586ee13149f3ca3aeb4347ffb4 1.png" width="700px" alt="">
+        <img src="../../assets/img/c5fe34586ee13149f3ca3aeb4347ffb4 1.png" width="700px" class="img-fluid" alt="">
       </div>
       <div class="col-sm">
         <h1 class="header-h1">Tuning</h1>
@@ -35,12 +36,13 @@
           Lorem Ipsum is simply dummy text <br> of the printing and typesetting industry. <br> Lorem Ipsum has been the
           industry's
         </p>
-        <button class="header-btn">Lorem</button>
+        <button class="header-btn" (click)="scrollToElement(more)" >Više <i class="fa fa-arrow-down"></i></button>
       </div>
     </div>
   </div>
+  <button id="fixed-btn" (click)="scrollToElement(top)" mat-raised-button><i class="fa fa-arrow-up"></i></button>
 </div>
-<div class="tuning-fact">
+<div class="tuning-fact" #more>
   <div class="row">
     <div class="col-sm tuning-left-col" style="background-color: #222;">
       <div>

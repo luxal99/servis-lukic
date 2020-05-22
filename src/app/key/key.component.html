@@ -1,6 +1,6 @@
 
 <div>
-    <div class="header">
+    <div class="header" #top>
 
         <nav class="navbar navbar-expand-lg ">
             <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
@@ -12,14 +12,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav text-right">
-                    <li class="nav-item active ">
-                        <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active" >Tuning <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                      <a class="nav-link active" [routerLink]="['/']" routerLinkActive="router-link-active">Početna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="router-link-active" >Portfolio</a>
+                      <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active">Tuning</a>
                     </li>
-                   
-                </ul>
+                    <li class="nav-item">
+                      <a class="nav-link" [routerLink]="['/key']" routerLinkActive="router-link-active">Ključevi</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Radovi</a>
+                    </li>
+                  </ul>
             </div>
         </nav>
         <div class="container text-center header-container">
@@ -32,18 +37,20 @@
                         industry's
                     </p>
                     <div class="text-left">
-                        <button class="header-btn">Lorem</button>
+                        <button class="header-btn" mat-raised-button color="primary" style="width: 50%;" (click)="scrollToElement(more)">Više <i class="fa fa-arrow-down"></i></button>
                     </div>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm img-col">
                     <img src="../../assets/img/XC-MINI-CONDOR-PLUS-KEY-CUTTING-MACHINE-NEW-ITEM- 1.png" width="500px"
                         alt="" class="img-fluid">
                 </div>
             </div>
+
+             <button id="fixed-btn" (click)="scrollToElement(top)" mat-raised-button><i class="fa fa-arrow-up"></i></button>
         </div>
     </div>
 
-    <section class="index-howto-alt py-3">
+    <section class="index-howto-alt py-3" #more>
         <div class="container">
             <h2 class="text-center mb-3 scroll" data-scroll="toggle(.ease)">
                 Proces izrade ključa kod nas</h2>

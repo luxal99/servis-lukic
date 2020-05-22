@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" #top>
   <nav class="navbar navbar-expand-lg ">
     <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
       <img src="../../assets/img/sl-white.png" alt="" width="50px" class="img-fluid">
@@ -9,14 +9,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav text-right">
-        <li class="nav-item active ">
-          <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >Pocetna <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/']" routerLinkActive="router-link-active">Početna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active" >Tuning</a>
+          <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active">Tuning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/key']" routerLinkActive="router-link-active" >Key</a>
+          <a class="nav-link" [routerLink]="['/key']" routerLinkActive="router-link-active">Ključevi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Radovi</a>
         </li>
       </ul>
     </div>
@@ -27,15 +30,17 @@
         <img src="../../assets/img/900-9004948_auto-mechanic-student 1.png" alt="" class="img-fluid">
       </div>
       <div class="col-sm">
-        <h6 class="header-h6">Lorem</h6>
-        <h1 class="header-h1">Portfolio</h1>
-        <p class="header-paragraf">Lorem Ipsum is simply dummy text of the printing and</p>
-        <button class="header-btn">Lorem</button>
+        <h6 class="header-h6">Naši</h6>
+        <h1 class="header-h1">Radovi</h1>
+        <p class="header-paragraf">Uverite se i sami u naš kvalitet kroz galeriju radova</p>
+        <button class="header-btn" (click)="scrollToElement(photos)">Radovi <i class="fa fa-arrow-down"></i></button>
       </div>
     </div>
+
+     <button id="fixed-btn" (click)="scrollToElement(top)" mat-raised-button><i class="fa fa-arrow-up"></i></button>
   </div>
 </div>
-<div class="image-div text-center">
+<div class="image-div text-center" #photos>
   <div class="container text-center">
     <ul class="category-ul">
       <a *ngFor="let item of listOfCategory" (click)="sortList(item.title)"><li class="category-li">{{item.title}}</li></a>
