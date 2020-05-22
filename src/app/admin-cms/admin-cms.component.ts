@@ -81,6 +81,12 @@ export class AdminCmsComponent implements OnInit {
     this.getPhotos();
   }
 
+  deleteMessage(_id){
+    this.messageService.delete(_id).subscribe(data=>{
+      this.getMessages();
+    })
+  }
+
   getPhotos() {
     this.photoService.getAll().subscribe(data => {
       this.listOfPhotos = data;
@@ -112,7 +118,7 @@ export class AdminCmsComponent implements OnInit {
 
 
   getMessages() {
-    this.messageService.getInbox().subscribe(data => {
+    this.messageService.getAll().subscribe(data => {
       this.listOfMessages = data;
     })
   }

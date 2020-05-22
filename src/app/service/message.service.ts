@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class MessageService extends AbstractService{
 
   constructor(public http:HttpClient) {
-    super(http,'/user/','message');
+    super(http,'/admin/','message');
   }
 
-  getInbox(){
-    return this.http.get("/admin/message",{responseType:'json'})
+  post(message){
+    return this.http.post("/admin/message",message,{responseType:'text'})
   }
 }

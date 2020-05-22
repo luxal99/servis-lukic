@@ -91,7 +91,7 @@
                             <td class="text-center" mat-cell *matCellDef="let element">
                                 <button mat-raised-button (click)="openMailPreviewDialog(element)">Preview</button>
                                 <button mat-raised-button class="delete-btn"
-                                    (click)="deletePhoto(element._id,element.fileName)">Delete</button>
+                                    (click)="deleteMessage(element._id)">Delete</button>
                             </td>
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="messageColumns"></tr>

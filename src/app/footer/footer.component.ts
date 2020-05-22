@@ -32,17 +32,18 @@ export class FooterComponent implements OnInit {
 
 
   send() {
-
     var message = new Message();
     message.full_name = this.messageForm.get('full_name').value;
     message.mail = this.messageForm.get('mail').value;
     message.message = this.messageForm.get('message').value;
 
-    this.messageService.save(message).subscribe(data => {
+    this.messageService.post(message).subscribe(data => {
       this.openSnackBar("Uspesno poslata poruka","DONE")
 
     })
-
   }
+
+
+  delete(_)
 
 }
