@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../service/photo.service';
 import { Photo } from '../classes/Photo';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-home',
@@ -24,8 +25,9 @@ export class HomeComponent implements OnInit {
   constructor(public photoService: PhotoService) { }
 
   ngOnInit() {
-    this.getLastThree();
+    this.getLastThree();;
   }
+
 
   getLastThree() {
     this.photoService.getLastThree().subscribe(data => {

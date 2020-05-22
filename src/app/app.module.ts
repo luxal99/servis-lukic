@@ -24,6 +24,7 @@ import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-
 import { MailPreviewDialogComponent } from './admin-cms/mail-preview-dialog/mail-preview-dialog.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TypingAnimationDirective } from 'angular-typing-animation'
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { TypingAnimationDirective } from 'angular-typing-animation'
   ],
   imports: [
     BrowserModule,
+    NgxSpinnerModule,
     AppRoutingModule,
     HttpClientModule,
     CKEditorModule,

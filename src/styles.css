@@ -22,3 +22,17 @@ nav{
     background: #ffe600;
     border-radius: 10px;
   }
+
+  button{
+      text-transform: uppercase;
+      letter-spacing: 2px;
+  }
+
+  #content {
+      display: none;
+    animation: fadein 2s;
+  }
+  @keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+  }

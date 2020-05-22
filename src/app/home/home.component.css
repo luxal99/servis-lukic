@@ -11,7 +11,11 @@ div{
     margin-left: 0 !important;
 }
 
-.nav-link {}
+.nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
 
 /* Header */
 
@@ -46,6 +50,7 @@ div{
     padding-right: 3em;
     padding-top: .3em;
     padding-bottom: .3em;
+    margin-top: 1em;
 }
 
 /* Header */

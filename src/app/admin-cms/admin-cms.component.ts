@@ -87,16 +87,15 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
-  getElementId(event) {
+  getElementId($event) {
 
-    var showItem = []
+    console.log($event.path[1].id);
+
+    var showItem = this.listOfMenuOptions.filter(item => item.id === $event.path[1].id);
+
 
     setTimeout(() => {
-      showItem = this.listOfMenuOptions.filter(item => item.id === event.target.id);
-    }, 100);
-
-    setTimeout(() => {
-      var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== event.target.id);
+      var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== $event.path[1].id);
       hiddenItems.forEach(item => {
         document.getElementById(item.div).style.display = 'none';
         document.getElementById(item.id).style.backgroundColor = '';
@@ -138,7 +137,7 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem("token");
     location.reload();
   }
