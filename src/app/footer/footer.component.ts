@@ -44,6 +44,4 @@ export class FooterComponent implements OnInit {
   }
 
 
-  delete(_)
-
 }

@@ -17,7 +17,7 @@ export class PhotoService extends AbstractService{
 
 
   getLastThree() {
-    return this.http.get("/admin/photo/three", { responseType: 'json' });
+    return this.http.get("/admin/photo/three", { responseType: 'text' });
   }
 
 }

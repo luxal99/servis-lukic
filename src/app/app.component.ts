@@ -9,7 +9,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class AppComponent {
   title = 'service-lukic';
 
-  constructor(private spinner: NgxSpinnerService){
+  constructor(){
 
   }
 
@@ -17,15 +17,5 @@ export class AppComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     AOS.init();
-    this.loader()
-  }
-
-  loader(){
-    this.spinner.show();
- 
-    setTimeout(() => {
-      this.spinner.hide();
-      document.getElementById('content').style.display='block';
-    }, 1000);
   }
 }

@@ -12,6 +12,6 @@ export class MessageService extends AbstractService{
   }
 
   post(message){
-    return this.http.post("/admin/message",message,{responseType:'text'})
+    return this.http.post("/user/message",message,{responseType:'text'})
   }
 }

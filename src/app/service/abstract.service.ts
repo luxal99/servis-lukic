@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class AbstractService {
 
   constructor(public http: HttpClient,public route:string,public path:string) { }

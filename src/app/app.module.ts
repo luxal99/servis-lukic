@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddPhotoDialogComponent } from './admin-cms/add-photo-dialog/add-photo-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
-import {  AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { PhotoPreviewDialogComponent } from './admin-cms/photo-preview-dialog/photo-preview-dialog.component';
 import { EditPhotoDialogComponent } from './admin-cms/edit-photo-dialog/edit-photo-dialog.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
@@ -23,8 +23,8 @@ import { ChartsModule } from 'ng2-charts';
 import { AddCategoryDialogComponent } from './admin-cms/add-category-dialog/add-category-dialog.component';
 import { MailPreviewDialogComponent } from './admin-cms/mail-preview-dialog/mail-preview-dialog.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { TypingAnimationDirective } from 'angular-typing-animation'
-import { NgxSpinnerModule } from "ngx-spinner";
+import { TypingAnimationModule } from 'angular-typing-animation';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +41,12 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ErrorPageComponent,
     AddCategoryDialogComponent,
     MailPreviewDialogComponent,
-    TypingAnimationDirective
+
   ],
   imports: [
     BrowserModule,
-    NgxSpinnerModule,
     AppRoutingModule,
+    TypingAnimationModule,
     HttpClientModule,
     CKEditorModule,
     BrowserAnimationsModule,
@@ -64,9 +64,11 @@ import { NgxSpinnerModule } from "ngx-spinner";
       measurementId: "G-JL5DYEZD9M"
     }),
     MaterialModule
-  ],schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
-  providers: [],
-  entryComponents:[AddPhotoDialogComponent,MailPreviewDialogComponent,AddCategoryDialogComponent,EditPhotoDialogComponent,PhotoPreviewDialogComponent],
+  ], schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+  providers: [HttpClientModule,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
+  entryComponents: [AddPhotoDialogComponent, MailPreviewDialogComponent, AddCategoryDialogComponent, EditPhotoDialogComponent, PhotoPreviewDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

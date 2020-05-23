@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   getLastThree() {
     this.photoService.getLastThree().subscribe(data => {
-      this.listOfPhotos =  data as Array<Photo>
+      this.listOfPhotos =  JSON.parse(data) as Array<Photo>
 
       this.firstPic = this.listOfPhotos[0].url;
       this.secPic = this.listOfPhotos[1].url;

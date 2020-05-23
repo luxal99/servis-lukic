@@ -65,7 +65,7 @@ table {
         margin: 5em 1em 2em 1em;
     }
     .col-sm-8{
-        margin: 2em;
+        margin: 0 !important;
     }
     .nav-container{
         margin-top: 0 !important;
@@ -79,5 +79,8 @@ table {
     }
     canvas{
         margin-top: 5em;
+    }
+    button{
+        font-size: 15px !important;
     }
 }
