@@ -1,33 +1,37 @@
-.navbar-icon{
+.navbar-icon {
     border-radius: 8px;
     color: #ffe600;
     font-size: 30px;
-  }
+}
 
-  .close-btn{
-      font-size: 30px;
-      color: #ffe600;
-  }
+.close-btn {
+    font-size: 30px;
+    color: #ffe600;
+}
 
-  .menu-btn{
-      color: #666;
-      font-size: 40px;
-      font-family: 'Righteous', cursive;
-      text-transform: none;
-  }
+.menu-btn {
+    color: #666;
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
+    text-transform: none;
+}
 
-  .menu-btn:hover{
-      color: #eee;
-  }
+.menu-btn:hover {
+    color: #eee;
+}
 
-  .menu-btn-1{
+.menu-btn-1 {
     margin-top: 1em;
-  }
+}
 
-  mat-drawer{
-      background-color: #000;
-  }
+mat-drawer {
+    background-color: #000;
+}
 
-  .menu-container{
-      padding-top: 40%;
-  }
+.menu-container {
+    padding-top: 40%;
+}
+
+.current {
+    color: #eee !important;
+}

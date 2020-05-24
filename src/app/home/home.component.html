@@ -11,18 +11,18 @@
 
       <div class="container menu-container">
         <div class="text-center">
-          <button class="menu-btn" mat-button>Pocetna</button>
+            <button class="menu-btn current" mat-button>Pocetna</button>
         </div>
         <div class="text-center">
-          <button class="menu-btn menu-btn-1" mat-button>Tuning</button>
+            <button class="menu-btn menu-btn-1" [routerLink]="['/tuning']" routerLinkActive="router-link-active"  mat-button>Tuning</button>
         </div>
         <div class="text-center">
-          <button class="menu-btn menu-btn-1" mat-button>Ključevi</button>
+            <button class="menu-btn menu-btn-1" [routerLink]="['/key']" routerLinkActive="router-link-active"  mat-button>Ključevi</button>
         </div>
         <div class="text-center">
-          <button class="menu-btn menu-btn-1" mat-button>Portfolio</button>
+            <button class="menu-btn menu-btn-1" [routerLink]="['/portfolio']" routerLinkActive="router-link-active"  mat-button>Portfolio</button>
         </div>
-      </div>
+    </div>
     </mat-drawer>
     <mat-drawer-content>
 

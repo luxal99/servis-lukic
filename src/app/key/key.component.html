@@ -8,21 +8,20 @@
                 <button class="close-btn" (click)="drawer.toggle()" mat-button><i class="fa fa-close"></i></button>
             </div>
         </div>
-
-        <div class="container menu-container">
-            <div class="text-center">
-                <button class="menu-btn" mat-button>Pocetna</button>
-            </div>
-            <div class="text-center">
-                <button class="menu-btn menu-btn-1" mat-button>Tuning</button>
-            </div>
-            <div class="text-center">
-                <button class="menu-btn menu-btn-1" mat-button>Ključevi</button>
-            </div>
-            <div class="text-center">
-                <button class="menu-btn menu-btn-1" mat-button>Portfolio</button>
-            </div>
-        </div>
+<div class="container menu-container">
+          <div class="text-center">
+              <button class="menu-btn" [routerLink]="['/']" routerLinkActive="router-link-active"  mat-button>Pocetna</button>
+          </div>
+          <div class="text-center">
+              <button class="menu-btn menu-btn-1" [routerLink]="['/tuning']" routerLinkActive="router-link-active"  mat-button>Tuning</button>
+          </div>
+          <div class="text-center">
+              <button class="menu-btn menu-btn-1 current" [routerLink]="['/key']" routerLinkActive="router-link-active"  mat-button>Ključevi</button>
+          </div>
+          <div class="text-center">
+              <button class="menu-btn menu-btn-1" [routerLink]="['/portfolio']" routerLinkActive="router-link-active"  mat-button>Portfolio</button>
+          </div>
+      </div>
     </mat-drawer>
     <mat-drawer-content>
         <div>
