@@ -8,20 +8,24 @@
                 <button class="close-btn" (click)="drawer.toggle()" mat-button><i class="fa fa-close"></i></button>
             </div>
         </div>
-<div class="container menu-container">
-          <div class="text-center">
-              <button class="menu-btn" [routerLink]="['/']" routerLinkActive="router-link-active"  mat-button>Pocetna</button>
-          </div>
-          <div class="text-center">
-              <button class="menu-btn menu-btn-1" [routerLink]="['/tuning']" routerLinkActive="router-link-active"  mat-button>Tuning</button>
-          </div>
-          <div class="text-center">
-              <button class="menu-btn menu-btn-1 current" [routerLink]="['/key']" routerLinkActive="router-link-active"  mat-button>Ključevi</button>
-          </div>
-          <div class="text-center">
-              <button class="menu-btn menu-btn-1" [routerLink]="['/portfolio']" routerLinkActive="router-link-active"  mat-button>Portfolio</button>
-          </div>
-      </div>
+        <div class="container menu-container">
+            <div class="text-center">
+                <button class="menu-btn" [routerLink]="['/']" routerLinkActive="router-link-active"
+                    mat-button>Pocetna</button>
+            </div>
+            <div class="text-center">
+                <button class="menu-btn menu-btn-1" [routerLink]="['/tuning']" routerLinkActive="router-link-active"
+                    mat-button>Tuning</button>
+            </div>
+            <div class="text-center">
+                <button class="menu-btn menu-btn-1 current" [routerLink]="['/key']"
+                    routerLinkActive="router-link-active" mat-button>Ključevi</button>
+            </div>
+            <div class="text-center">
+                <button class="menu-btn menu-btn-1" [routerLink]="['/portfolio']" routerLinkActive="router-link-active"
+                    mat-button>Portfolio</button>
+            </div>
+        </div>
     </mat-drawer>
     <mat-drawer-content>
         <div>
@@ -31,7 +35,8 @@
                     <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
                         <img src="../../assets/img/sl-yellow.png" alt="" width="50px" class="img-fluid">
                     </a>
-                    <button class="navbar-icon navbar-toggler" style="color: #222 !important;" mat-button (click)="drawer.toggle()">
+                    <button class="navbar-icon navbar-toggler" style="color: #222 !important;" mat-button
+                        (click)="drawer.toggle()">
                         <i class="fa fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -157,14 +162,14 @@
             <div class="akl">
                 <div class="row akl-row">
                     <div class="col-sm">
-                        <h1 class="akl-h1">Lorem ipsum</h1>
+                        <h1 class="akl-h1">Izgubljeni ključ</h1>
                         <div class="vertical-divider"></div>
-                        <p class="akl-paragraf">Naš servis opremljen je profesionalnom opremom
-                            u koju se možete u veriti po dolasku
-                            u servis.Pored toga potrudili smo se isto tako
-                            da enterijer servisa bude lepo uređen.</p>
+                        <p class="akl-paragraf">
+                            Ukolito ste izgubili jedini primerak ključa kojim startujete automobil,mi smo tu za Vas.U
+                            okviru servisa pružamo uslugu izrade ključa po kodu brave.
+                        </p>
 
-                        <button mat-raised-button color="primary" class="akl-btn">Lorem</button>
+                        <button mat-raised-button color="primary" class="akl-btn" onclick="location.href='https://www.youtube.com/watch?v=5VPgch535-c'">Više</button>
                     </div>
                     <div class="col-sm"></div>
                 </div>

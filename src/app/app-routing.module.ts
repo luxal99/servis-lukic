@@ -11,14 +11,25 @@ import { TuningComponent } from './tuning/tuning.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '', component: HomeComponent
+  },
   { path: 'login', component: LoginCmsComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'panel', component: AdminCmsComponent, canActivate: [AuthService] },
-  { path: 'error', component: ErrorPageComponent },
-  { path: 'key', component: KeyComponent },
-  { path: 'tuning', component: TuningComponent },
-  { path: '**', component: ErrorPageComponent }
+  {
+    path: 'portfolio', component: PortfolioComponent
+  },
+  {
+    path: 'panel', component: AdminCmsComponent, canActivate: [AuthService]
+  },
+  {
+    path: 'key', component: KeyComponent
+  },
+  {
+    path: 'tuning', component: TuningComponent
+  },
+  {
+    path: '**', component: ErrorPageComponent
+  },
 
 ];
 
