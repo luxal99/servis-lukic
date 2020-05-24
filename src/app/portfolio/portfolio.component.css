@@ -136,6 +136,10 @@ nav {
         width: 250px;
         height: 250px;
     }
+
+    .figure{
+        padding: 5em 0em 5em 0em;
+    }
 }
 
 /* Images */

@@ -1,3 +1,30 @@
+  <mat-drawer-container  class="example-container">
+    <mat-drawer #drawer mode="over" style="width: 90%;">
+      <div class="row" style="padding-top: 2em;">
+        <div class="col" >
+          <img src="../../assets/img/sl-white.png" width="50px" alt="" class="img-fluid">
+        </div>
+        <div class="col text-right">
+          <button class="close-btn" (click)="drawer.toggle()" mat-button><i class="fa fa-close"></i></button>
+        </div>
+      </div>
+
+      <div class="container menu-container">
+        <div class="text-center">
+          <button class="menu-btn" mat-button>Pocetna</button>
+        </div>
+        <div class="text-center">
+          <button class="menu-btn menu-btn-1" mat-button>Tuning</button>
+        </div>
+        <div class="text-center">
+          <button class="menu-btn menu-btn-1" mat-button>Ključevi</button>
+        </div>
+        <div class="text-center">
+          <button class="menu-btn menu-btn-1" mat-button>Portfolio</button>
+        </div>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
 
 <div class="menu">
  
@@ -6,11 +33,10 @@
       <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
         <img src="../../assets/img/sl-white.png" alt="" width="50px" class="img-fluid">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-icon navbar-toggler" mat-button  (click)="drawer.toggle()">
+        <i class="fa fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" #navBar>
         <ul class="navbar-nav text-right">
           <li class="nav-item">
             <a class="nav-link active" [routerLink]="['/']" routerLinkActive="router-link-active">Početna</a>
@@ -194,3 +220,5 @@
   </div>
   <app-footer></app-footer>
 </div>
+    </mat-drawer-content>
+  </mat-drawer-container>

@@ -59,6 +59,11 @@ button {
   animation: fadein 2s;
 }
 
+.navbar-toggler{
+  border-radius: 25px;
+  border: 1px solid #ffe600;
+}
+
 @keyframes fadein {
   from {
     opacity: 0
