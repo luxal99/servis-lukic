@@ -150,7 +150,8 @@ export class AdminCmsComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddPhotoDialogComponent, {
-      width: 'auto'
+      width: 'auto',
+      height:'65%'
     });
   }
 

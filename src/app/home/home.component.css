@@ -246,13 +246,18 @@ figcaption {
 
 @media screen and (max-width:600px) {
     .header-h1 {
-        padding-top: 50%;
+        padding-top: 40%;
     }
     .porfolio-img-row {
         padding-left: 0 !important;
     }
     .fact-col {
         margin-top: 5em;
+    }
+    .menu{
+        zoom: 90%;
+    }.tuning-h1{
+        font-size: 70px !important;
     }
 }
 

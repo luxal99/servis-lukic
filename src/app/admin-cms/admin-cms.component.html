@@ -35,7 +35,7 @@
                         (click)="getElementId($event)">{{button.title}}</button>
                 </div>
             </div>
-            <div class="col"></div>
+            <div class="col-sm-1"></div>
             <div class="col-sm-8" id="photo-div">
                 <div class="photo-div">
                     <table mat-table [dataSource]="listOfPhotos" class="mat-elevation-z8">
@@ -53,11 +53,11 @@
                         <ng-container matColumnDef="option" class="text-center">
                             <th mat-header-cell *matHeaderCellDef> </th>
                             <td class="text-center" mat-cell *matCellDef="let element">
-                                <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)">Preview</button>
+                                <button mat-raised-button (click)="openPhotoPreviewDialog(element.url)"><i class="fa fa-eye"></i></button>
                                 <button mat-raised-button (click)="openEditPhotoDialog(element)"
-                                    style="margin-left: 1em;">Edit</button>
+                                    style="margin-left: 1em;"><i class="fa fa-edit"></i></button>
                                 <button mat-raised-button class="delete-btn"
-                                    (click)="deletePhoto(element._id,element.fileName)">Delete</button>
+                                    (click)="deletePhoto(element._id,element.fileName)"><i class="fa fa-trash"></i></button>
                             </td>
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="photoColumns"></tr>
