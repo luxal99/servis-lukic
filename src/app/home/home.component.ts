@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../service/photo.service';
 import { Photo } from '../classes/Photo';
-import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-home',
