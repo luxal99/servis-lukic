@@ -25,6 +25,7 @@ import { MailPreviewDialogComponent } from './admin-cms/mail-preview-dialog/mail
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TypingAnimationModule } from 'angular-typing-animation';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ChartsModule,
+    NgxUsefulSwiperModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyBsdW760wcZFFC0_yXO8EYzaX_oNuNq9CQ",
