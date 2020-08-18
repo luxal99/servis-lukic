@@ -10,6 +10,8 @@ import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { Router } from '@angular/router';
 import { AddCategoryDialogComponent } from './add-category-dialog/add-category-dialog.component';
+import { MessageService } from '../service/message.service';
+import { MailPreviewDialogComponent } from "./mail-preview-dialog/mail-preview-dialog.component";
 
 @Component({
   selector: 'app-admin-cms',
@@ -19,11 +21,11 @@ import { AddCategoryDialogComponent } from './add-category-dialog/add-category-d
 export class AdminCmsComponent implements OnInit {
 
   listOfPhotos: any = [];
-  listOfMessages:any=[];
+  listOfMessages: any = [];
   listOfMenuOptions: Array<any> =
     [
-      { id: 'photo', title: 'Photos', div: 'photo-div' },
-      { id: 'message', title: 'Messages', div: 'message-div' }
+      { id: 'photo', title: 'Photos', div: 'photo-div', },
+      { id: 'message', title: 'Messages', div: 'message-div', }
     ]
 
   barChartLegend = true;
@@ -39,13 +41,19 @@ export class AdminCmsComponent implements OnInit {
   barChartData: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
   barChartDataForUserId: ChartDataSets[] = [{ data: [], backgroundColor: ['#EC6B56', "#FFC154", "#47B39C"] }];
 
-  constructor(public dialog: MatDialog, public router: Router, public photoService: PhotoService, public afStorage: AngularFireStorage, public authService: AuthService) { }
+  constructor(public dialog: MatDialog, public router: Router,
+    public photoService: PhotoService, public afStorage: AngularFireStorage,
+    public authService: AuthService, public messageService: MessageService) { }
 
   ngOnInit() {
     this.auth()
     this.getPhotos();
+    this.getMessages();
     this.getBarChartData();
+    this.btnPropertyDefault();
   }
+
+
 
   auth() {
     const token = { token: localStorage.getItem("token") };
@@ -54,6 +62,13 @@ export class AdminCmsComponent implements OnInit {
 
 
     })
+  }
+
+  btnPropertyDefault() {
+    setTimeout(() => {
+      document.getElementById('photo').style.backgroundColor = '#222';
+      document.getElementById('photo').style.color = '#ffe600';
+    }, 1);
   }
 
 
@@ -66,36 +81,46 @@ export class AdminCmsComponent implements OnInit {
     this.getPhotos();
   }
 
+  deleteMessage(_id){
+    this.messageService.delete(_id).subscribe(data=>{
+      this.getMessages();
+    })
+  }
+
   getPhotos() {
     this.photoService.getAll().subscribe(data => {
       this.listOfPhotos = data;
     })
   }
 
-  getElementId(event: Event) {
-    let elementId: string = (event.target as Element).id;
-    console.log(elementId);
-    
+  getElementId($event) {
 
-    let showItem = this.listOfMenuOptions.filter(item => item.id === elementId);
-   setTimeout(() => {
-    var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== elementId);
-    hiddenItems.forEach(item => {
-      document.getElementById(item.div).style.display = 'none';
-    })
-   }, 100);
+    console.log($event.path[1].id);
 
-   setTimeout(() => {
-    document.getElementById(showItem[0].div).style.display = 'block';
+    var showItem = this.listOfMenuOptions.filter(item => item.id === $event.path[1].id);
 
-   }, 200);
 
-    // do something with the id... 
+    setTimeout(() => {
+      var hiddenItems = this.listOfMenuOptions.filter(item => item.id !== $event.path[1].id);
+      hiddenItems.forEach(item => {
+        document.getElementById(item.div).style.display = 'none';
+        document.getElementById(item.id).style.backgroundColor = '';
+        document.getElementById(item.id).style.color = '';
+      })
+    }, 200);
 
+    setTimeout(() => {
+      document.getElementById(showItem[0].div).style.display = 'block';
+      document.getElementById(showItem[0].id).style.backgroundColor = '#222';
+      document.getElementById(showItem[0].id).style.color = '#ffe600';
+    }, 300);
   }
 
-  getMessages(){
-    
+
+  getMessages() {
+    this.messageService.getAll().subscribe(data => {
+      this.listOfMessages = data;
+    })
   }
 
   getBarChartData() {
@@ -118,9 +143,15 @@ export class AdminCmsComponent implements OnInit {
     })
   }
 
+  logout() {
+    localStorage.removeItem("token");
+    location.reload();
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddPhotoDialogComponent, {
-      width: 'auto'
+      width: 'auto',
+      height:'65%'
     });
   }
 
@@ -128,6 +159,17 @@ export class AdminCmsComponent implements OnInit {
     const dialogRef = this.dialog.open(PhotoPreviewDialogComponent, {
       width: 'auto',
       data: image
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getPhotos();
+    });
+  }
+
+  openMailPreviewDialog(mail): void {
+    const dialogRef = this.dialog.open(MailPreviewDialogComponent, {
+      width: 'auto',
+      data: mail
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -154,6 +196,6 @@ export class AdminCmsComponent implements OnInit {
 
 
   photoColumns: string[] = ['title', 'category', 'option']
-  messageColumns: string[] = ['fullanme', 'subject', 'date','option']
+  messageColumns: string[] = ['fullanme', 'subject', 'date', 'option']
 
 }

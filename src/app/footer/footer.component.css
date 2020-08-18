@@ -20,11 +20,11 @@ mat-label {
 }
 
 mat-form-field {
-    width: 80%;
+    width: 100%;
 }
 
 .footer-container {
-    padding-top: 10em;
+    padding: 10em 30% 10em 30%;
 }
 
 .footer-btn {
@@ -32,9 +32,53 @@ mat-form-field {
     border: 0 !important;
     padding-top: .3em;
     padding-bottom: .3em;
-    width: 80%;
+    width: 50%;
     font-size: 20px;
     -webkit-box-shadow: 10px 10px 44px -20px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 44px -20px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 44px -20px rgba(0, 0, 0, 0.75);
+    margin-top: 2em;
+}
+
+form {
+    padding-top: 2em;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+h5, a {
+    font-family: 'Raleway', sans-serif;
+    color: #555;
+}
+
+.col-sm {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.copyright-div{
+    padding-left: 6em;
+    padding-right: 6em;
+}
+
+@media screen and (max-width:600px) {
+    .col-sm {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .footer-container {
+        padding: 10em 10% 10em 10%;
+    }
+    .footer-btn {
+        width: 100%;
+        padding-top: .4em;
+        padding-bottom: .4em;
+    }
+    .copyright-div {
+        padding: 0 1em 1em 1em;
+    }
 }

@@ -1,48 +1,56 @@
 <div class="footer-div">
-    <div class="container footer-container">
+    <div class="     footer-container">
+        <div class="col-sm">
+            <h1 class="text-center" style="font-weight: bold;">Kontaktirajte nas.</h1>
+            <form [formGroup]="messageForm">
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Ime i prezime</mat-label>
+                                <input formControlName="full_name" matInput placeholder="Placeholder">
+
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                    <div class="col-sm" style="margin-left:2em;">
+                        <div >
+                            <mat-form-field appearance="outline">
+                                <mat-label>E-mail</mat-label>
+                                <input formControlName="mail" matInput placeholder="Placeholder">
+
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Poruka</mat-label>
+                        <textarea formControlName="message" matInput placeholder="Placeholder"></textarea>
+
+                    </mat-form-field>
+
+                </div>
+                <div class="text-center">
+                    <button class="footer-btn" (click)="send()" [disabled]="messageForm.invalid">Pošalji</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="copyright-div">
         <div class="row">
-            <div class="col-sm">
-                <h1>Lorem ipsum</h1>
-                <form [formGroup]="messageForm">
-                    <div>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Ime i prezime</mat-label>
-                            <input formControlName="full_name" matInput placeholder="Placeholder">
-
-                        </mat-form-field>
-
-                    </div>
-                    <div>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Predlog</mat-label>
-                            <input formControlName="subject" matInput placeholder="Placeholder">
-
-                        </mat-form-field>
-
-                    </div>
-                    <div>
-                        <mat-form-field appearance="outline">
-                            <mat-label>E-mail</mat-label>
-                            <input formControlName="mail" matInput placeholder="Placeholder">
-
-                        </mat-form-field>
-
-                    </div>
-                    <div>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Poruka</mat-label>
-                            <textarea formControlName="message" matInput placeholder="Placeholder"></textarea>
-
-                        </mat-form-field>
-
-                    </div>
-                    <button class="footer-btn" (click)="send()">Lorem ipsum</button>
-                </form>
-
+            <div class="col">
+                <h5>Copyright 2020 | Sva prava zadrzana</h5>
             </div>
-            <div class="col-sm">
-                <img src="../../assets/img/109-1093967_lynette-hayhow-car-fixing-vector-png 1.png" alt=""
-                    class="img-fluid">
+            <div class="col text-center">
+                 <h5 ><a href="https://alemarc.dev">Alemarc</a></h5>
+            </div>
+            <div class="col text-right">
+                <h5><i class="fa fa-instagram" style="color: #ffe600;"></i> servis.lukic</h5>
             </div>
         </div>
     </div>

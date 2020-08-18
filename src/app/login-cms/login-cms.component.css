@@ -1,3 +1,5 @@
+
+
 .login-col {
     -webkit-box-shadow: 10px 10px 33px -21px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 33px -21px rgba(0, 0, 0, 0.75);
@@ -43,4 +45,11 @@ h1{
 }
 mat-label{
     color: #555555;
+}
+
+@media screen and (max-width:600px){
+    .login-container{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }

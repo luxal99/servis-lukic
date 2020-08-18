@@ -24,7 +24,7 @@ export class AddCategoryDialogComponent implements OnInit {
   add() {
     let category = { title: this.addCategoryForm.get("title").value }
     this.categoryService.save(category).subscribe(data => {
-      console.log(data);
+     
     })
   }
 
@@ -36,7 +36,7 @@ export class AddCategoryDialogComponent implements OnInit {
 
   delete(_id){
     this.categoryService.delete(_id).subscribe(data=>{
-      console.log(data);
+     
       
     })
   }

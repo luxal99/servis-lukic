@@ -8,8 +8,6 @@ import { AbstractService } from "./abstract.service";
 export class CategoryService extends AbstractService{
 
   constructor(public http:HttpClient) {
-    super(http);
-    super.route = '/admin/';
-    super.path = 'category';
+    super(http,'/admin/','category');
   }
 }

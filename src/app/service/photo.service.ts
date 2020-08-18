@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AbstractService } from './abstract.service';
 
 @Injectable({
@@ -8,9 +8,7 @@ import { AbstractService } from './abstract.service';
 export class PhotoService extends AbstractService{
 
   constructor(public http: HttpClient) {
-    super(http);
-    super.route = '/admin/';
-    super.path = 'photo';
+    super(http,'/admin/','photo');
    }
 
   countPhotoByCategory(){
@@ -19,7 +17,7 @@ export class PhotoService extends AbstractService{
 
 
   getLastThree() {
-    return this.http.get("/admin/photo/three", { responseType: 'json' });
+    return this.http.get("/admin/photo/three", { responseType: 'text' });
   }
 
 }

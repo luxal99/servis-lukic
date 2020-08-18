@@ -10,7 +10,7 @@ export class AuthService implements CanActivate {
   constructor(public http: HttpClient, public router: Router) { }
 
   auth(admin) {
-    return this.http.post("/admin/auth",admin,{responseType:'json'})
+    return this.http.post("/admin/auth",admin,{responseType:'text'})
   }
 
   checkToken(token){

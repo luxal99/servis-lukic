@@ -8,8 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class MessageService extends AbstractService{
 
   constructor(public http:HttpClient) {
-    super(http);
-    super.route = '/user/';
-    super.path = 'message';
+    super(http,'/admin/','message');
+  }
+
+  post(message){
+    return this.http.post("/user/message",message,{responseType:'text'})
   }
 }

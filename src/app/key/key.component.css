@@ -1,0 +1,146 @@
+@import '../../assets/css/sidebar.css';
+
+a {
+    color: #222;
+}
+
+nav {
+    border-bottom: 1px solid #eee;
+}
+
+.header-h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 60px;
+}
+
+.header-container {
+    padding-top: 10%;
+}
+
+p {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 20px;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.akl {
+    background-image: url('../../assets/img/mercedes.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+.akl-row {
+    padding: 15% 5em 0% 5em;
+}
+
+.akl-h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #eee;
+}
+
+.akl-paragraf {
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+}
+
+.akl-btn {
+    font-size: 20px;
+    width: 25%;
+}
+
+@media screen and (max-width:600px) {
+    .akl-btn {
+        width: 100%;
+    }
+    .akl {
+        background-image: url('../../assets/img/mercedes.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 120vh;
+    }
+}
+
+@media (min-width: 576px) {
+    .psd-left1:after {
+        border: 3px solid grey;
+        background-color: rgb(255, 199, 0);
+        border-radius: 50%;
+        content: "";
+        height: 20px;
+        position: absolute;
+        left: -10px;
+        top: 50px;
+        width: 20px;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 576px) {
+    .psd-right1:after {
+        border: 3px solid grey;
+        background-color: rgb(255, 199, 0);
+        border-radius: 50%;
+        content: "";
+        height: 20px;
+        position: absolute;
+        right: -10px;
+        top: 49px;
+        width: 20px;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 576px) {
+    .psd-left2:after {
+        border: 3px solid grey;
+        background-color: rgb(255, 199, 0);
+        border-radius: 50%;
+        content: "";
+        height: 20px;
+        position: absolute;
+        left: -10px;
+        top: 48px;
+        width: 20px;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 576px) {
+    .psd-right2:after {
+        border: 3px solid grey;
+        background-color: rgb(255, 199, 0);
+        border-radius: 50%;
+        content: "";
+        height: 20px;
+        position: absolute;
+        right: -10px;
+        top: 46px;
+        width: 20px;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 576px) {
+    .psd-line:after {
+        content: "";
+        height: 100%;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 2px;
+        background-color: rgb(234, 234, 234);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .img-col {
+        margin-top: 5em;
+    }
+}

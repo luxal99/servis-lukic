@@ -24,12 +24,13 @@ export class HomeComponent implements OnInit {
   constructor(public photoService: PhotoService) { }
 
   ngOnInit() {
-    this.getLastThree();
+    this.getLastThree();;
   }
+
 
   getLastThree() {
     this.photoService.getLastThree().subscribe(data => {
-      this.listOfPhotos =  data as Array<Photo>
+      this.listOfPhotos =  JSON.parse(data) as Array<Photo>
 
       this.firstPic = this.listOfPhotos[0].url;
       this.secPic = this.listOfPhotos[1].url;
@@ -40,5 +41,12 @@ export class HomeComponent implements OnInit {
       this.thrCat =  this.listOfPhotos[2].category.title;
     })
   }
+
+
+  scrollToElement($element): void {
+    $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
+  }
+
 
 }
