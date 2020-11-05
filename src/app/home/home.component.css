@@ -1,9 +1,9 @@
 @import '../../assets/css/sidebar.css';
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 a {
     color: #e1e1e1;
 }
-
 
 div {
     background-attachment: fixed;
@@ -19,6 +19,7 @@ div {
     font-weight: bold;
     letter-spacing: 3px;
 }
+
 
 /* Header */
 
@@ -63,7 +64,9 @@ div {
     transition: .5s;
 }
 
+
 /* Header */
+
 
 /* Fact */
 
@@ -78,7 +81,9 @@ div {
     padding-top: 1em;
 }
 
+
 /* Fact */
+
 
 /* Porfolio */
 
@@ -123,7 +128,7 @@ div {
     padding-right: 1em;
 }
 
-.va-paragraf:hover{
+.va-paragraf:hover {
     color: #ffe600;
     transition: .5s;
 }
@@ -143,7 +148,9 @@ figcaption {
     font-size: 20px !important;
 }
 
+
 /* Portfolio */
+
 
 /* Tuning  */
 
@@ -168,7 +175,7 @@ figcaption {
 .tuning-btn:hover {
     background-color: #222;
     color: #eee;
-    transition: .5s ;
+    transition: .5s;
 }
 
 .tuning-paragraf {
@@ -192,7 +199,9 @@ figcaption {
     padding-bottom: 7em;
 }
 
+
 /* Tuning  */
+
 
 /* Key */
 
@@ -206,7 +215,9 @@ figcaption {
     padding-left: 2em;
 }
 
+
 /* Key */
+
 
 /* About */
 
@@ -232,7 +243,8 @@ figcaption {
     font-family: 'Raleway', sans-serif;
 }
 
-.card-content, h2 {
+.card-content,
+h2 {
     padding-top: 2em;
 }
 
@@ -241,7 +253,9 @@ figcaption {
     padding-top: 2em;
 }
 
+
 /* About */
+
 
 /* Responsive */
 
@@ -255,11 +269,13 @@ figcaption {
     .fact-col {
         margin-top: 5em;
     }
-    .menu{
+    .menu {
         zoom: 90%;
-    }.tuning-h1{
+    }
+    .tuning-h1 {
         font-size: 70px !important;
     }
 }
+
 
 /* Responsive */
