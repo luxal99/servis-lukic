@@ -5,9 +5,7 @@ a {
     color: #e1e1e1;
 }
 
-div {
-    background-attachment: fixed;
-}
+div {}
 
 .row {
     margin-right: 0 !important;
@@ -28,7 +26,6 @@ div {
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .header-h1 {
