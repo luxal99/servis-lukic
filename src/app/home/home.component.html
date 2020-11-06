@@ -1,1 +1,224 @@
-<p>home works!</p>
+  <mat-drawer-container  class="example-container">
+    <mat-drawer #drawer mode="over" style="width: 90%;">
+      <div class="row" style="padding-top: 2em;">
+        <div class="col" >
+          <img src="../../assets/img/sl-white.png" width="50px" alt="" class="img-fluid">
+        </div>
+        <div class="col text-right">
+          <button class="close-btn" (click)="drawer.toggle()" mat-button><i class="fa fa-close"></i></button>
+        </div>
+      </div>
+
+      <div class="container menu-container">
+        <div class="text-center">
+            <button class="menu-btn current" mat-button>Pocetna</button>
+        </div>
+        <div class="text-center">
+            <button class="menu-btn menu-btn-1" [routerLink]="['/tuning']" routerLinkActive="router-link-active"  mat-button>Tuning</button>
+        </div>
+        <div class="text-center">
+            <button class="menu-btn menu-btn-1" [routerLink]="['/key']" routerLinkActive="router-link-active"  mat-button>Ključevi</button>
+        </div>
+        <div class="text-center">
+            <button class="menu-btn menu-btn-1" [routerLink]="['/portfolio']" routerLinkActive="router-link-active"  mat-button>Portfolio</button>
+        </div>
+    </div>
+    </mat-drawer>
+    <mat-drawer-content>
+
+<div >
+ 
+  <div class="header-div" #top>
+    <nav class="navbar navbar-expand-lg ">
+      <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active">
+        <img src="../../assets/img/sl-white.png" alt="" width="50px" class="img-fluid">
+      </a>
+      <button class="navbar-icon navbar-toggler" mat-button  (click)="drawer.toggle()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" #navBar>
+        <ul class="navbar-nav text-right">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/']" routerLinkActive="router-link-active">Početna</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/tuning']" routerLinkActive="router-link-active">Tuning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/key']" routerLinkActive="router-link-active">Ključevi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Radovi</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="header-h1" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">Servis Lukić</h1>
+          <div class="vertical-divider" style="height: 50px;" data-aos="zoom-in" data-aos-duration="1000"
+            data-aos-delay="200"></div>
+          <div>
+            <span class="header-paragraf" typingAnimation [typeSpeed]="20" [startDelay]="0" >
+              Naše iskustvo govori o nama.Budi i ti jedan od zadovoljnih klijenata.
+            </span>
+          </div>
+          <button (click)="scrollToElement(more)" class="header-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Više <i class="fa fa-arrow-down"></i></button>
+        </div>
+  
+      </div>
+
+      <button id="fixed-btn" (click)="scrollToElement(top)" mat-raised-button><i class="fa fa-arrow-up"></i></button>
+    </div>
+  </div>
+  <div class="fact-div" #more>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm">
+          <img src="../../assets/img/img_21240.png" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
+            class="img-fluid">
+          <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">DPF/EGR Flaps off</h3>
+        </div>
+        <div class="col-sm fact-col">
+          <img src="../../assets/img/53128-svg 1.png" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"
+            class="img-fluid">
+          <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">Chip tuning</h3>
+        </div>
+        <div class="col-sm fact-col">
+          <img src="../../assets/img/wrench-icon-png-free-download-wrench-png-png-720_720 1.png" data-aos="fade-right"
+            data-aos-duration="1000" data-aos-delay="300" class="img-fluid">
+          <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">Kompletno servisiranje</h3>
+        </div>
+        <div class="col-sm fact-col">
+          <img src="../../assets/img/img_561138 1.png" style="height: 100px;" class="img-fluid" data-aos="fade-right"
+            data-aos-duration="1000" data-aos-delay="400">
+          <h3 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">Izrada i kodiranje</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-div text-center">
+    <div class="container portfolio-container">
+      <h1 class="portfolio-h1" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">Radovi</h1>
+      <div class="vertical-divider text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
+      <div class="row porfolio-img-row">
+        <div class="col text-right">
+          <figure class="imghvr-zoom-out-right" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+            <img [src]="firstPic" height="400px" width="450px" alt="">
+            <figcaption class="text-center" style="padding-top: 40%;">
+              {{firstCat}}
+            </figcaption>
+          </figure>
+  
+        </div>
+        <div class="col text-left">
+          <div class="col">
+            <figure class="imghvr-zoom-out-right" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+              <img [src]="secPic" width="300px" height="200px" alt="">
+              <figcaption class="text-center small-caption" style="padding-top: 30%;">
+                {{secCat}}
+              </figcaption>
+            </figure>
+  
+          </div>
+          <div class="col">
+            <figure class="imghvr-zoom-out-right" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+              <img [src]="thrPic" width="300px" height="200px" alt="">
+              <figcaption class="text-center small-caption" style="padding-top: 30%;">
+                {{thrCat}}
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="portfolio-paragraf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">Uveri se u naše
+        uspešne radove</p>
+      <div class="text-right">
+        <a [routerLink]="['/portfolio']" routerLinkActive="router-link-active">
+          <p class="va-paragraf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">Pogledaj sve <i class="fa fa-arrow-right"></i></p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="tuning-div">
+    <div class="container tuning-container">
+      <div class="row">
+        <div class="col-sm tuning-img-col">
+          <img src="../../assets/img/c5fe34586ee13149f3ca3aeb4347ffb4 1.png" data-aos="fade-down" data-aos-duration="1000"
+            data-aos-delay="100" alt="" class="img-fluid">
+        </div>
+        <div class="col-sm right-col">
+          <h1 class="tuning-h1" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="300">Tuning.</h1>
+  
+          <p class="tuning-paragraf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+            Svaki vlasnik automobila je barem jednom poželeo više snage u svom autu.Naš servis pruža mogućnost povećanje
+            snage motora,a ujedno i smanjenje potrošnje.
+          </p>
+          <button class="tuning-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"
+            [routerLink]="['/tuning']" routerLinkActive="router-link-active">Saznaj više <i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="key-div">
+    <div class="container key-container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="col-sm ">
+            <h1 class="tuning-h1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Ključevi.</h1>
+            <p class="tuning-paragraf" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+              Uz pomoć najmodernijih alata na svetskom tržištu,naš servis Vam pruža izradu i kodiranje ključeva za sve
+              poznate brendove automobila.
+            </p>
+            <button class="tuning-btn" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300"
+              [routerLink]="['/key']" routerLinkActive="router-link-active">Saznaj više <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="col-sm key-img-col">
+          <img src="../../assets/img/XC-MINI-CONDOR-PLUS-KEY-CUTTING-MACHINE-NEW-ITEM- 1.png" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-div">
+    <div class="row">
+      <div class="col-sm white-col">
+        <div class="card-content text-center">
+          <h2 class="about-h1">Brzina</h2>
+          <p class="about-paragraf">
+            Potrudićemo se da Vaše zahteve izvršimo u što kraćem roku kako bi Vam automobil bio dostupan.
+            Mnoge od usluga vršimo odmah po dolasku u servis tako da klijenti ne moraju mnogo čekati.
+          </p>
+          <img src="../../assets/img/Time_Outline_Time_Fast_Watch_Clock_Hour-512 1.png" width="50px" alt=""
+            class="img-fluid">
+        </div>
+      </div>
+      <div class="col-sm yellow-col">
+        <div class="card-content text-center">
+          <h2 class="about-h1">Kvalitet</h2>
+          <p class="about-paragraf">
+            Već po dolasku u servis možete se i sami uveriti da je naš servis opremljen savremenom opremom,takođe prilikom
+            ugradnje rezervnih delova garantujemo ugradnju najvalitetnijih zamenskih delova na tržištu
+          </p>
+          <img src="../../assets/img/228-2281356_award-experience-icon-experience-png-transparent-png (1) 1.png"
+            width="50px" alt="" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-sm black-col">
+        <div class="card-content text-center">
+          <h2 class="about-h1" style="color: #eee;">Pouzdanost</h2>
+          <p class="about-paragraf yellow-paragraf">
+            Naš servis osnovan je davne 2003. godine,tako da smo stekli ogromno iskusvo u radu i poverenje klijenata koje
+            je dragoceno.
+          </p>
+          <img src="../../assets/img/trust-icon-18 1.png" width="50px" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+    </mat-drawer-content>
+  </mat-drawer-container>

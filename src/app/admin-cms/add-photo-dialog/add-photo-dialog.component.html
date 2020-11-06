@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Dodaj sliku</h1>
+
+    <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="addFiles($event)">
+      <input hidden type="file" #fileInput multiple (change)="addFiles($event.target.files)">
+    </div>
+
+    <div style="padding-left: 5em;padding-right: 5em;" *ngFor="let file of fileUploadList;let i=index">
+      <div class="row">
+        <div class="col">
+          <p>{{file.name}}</p>
+        </div>
+        <div class="col text-right">
+          <button class="delete-file" (click)="deleteAttachment(i)">
+            <img class="img-fluid" width="30px" src="../../../assets/img/Environment_Glyph-09-512.webp">
+          </button>
+        </div>
+      </div>
+      <mat-progress-bar mode="determinate" [value]="percentage"></mat-progress-bar><br>
+    </div>
+    
+    <form [formGroup]="photoForm">
+      <div class="text-center">
+        <mat-form-field appearance="outline">
+          <mat-label>Type text</mat-label>
+          <input matInput formControlName="description">
+          <mat-hint>Short description</mat-hint>
+        </mat-form-field>
+      </div>
+     <div class="text-center">
+        <mat-form-field appearance="outline" >
+            <mat-label>Select me</mat-label>
+            <mat-select formControlName="category">
+              <mat-option *ngFor="let item of listOfCategory" [value]="item">
+                {{item.title}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+     </div>
+     <div class="text-center" style="margin-bottom: 1em;">
+      <mat-slide-toggle  #toggle id="toggle" formControlName="isUploaded" [style.color]="isReady ? 'red':'#4BB543' ">{{isReady}}</mat-slide-toggle>
+       
+     </div>
+     <div class="text-center">
+       <button class="upload-btn" mat-raised-button (click)="uploadFiles()">Upload</button>
+       <button class="save-btn" mat-raised-button (click)="savePhoto()" [disabled]="!toggle.checked">Save</button>
+     </div>
+    </form>
+</div>
